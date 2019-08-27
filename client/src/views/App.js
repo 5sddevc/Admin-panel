@@ -1,6 +1,8 @@
 import React from 'react';
+import 'antd/dist/antd.css';
 import logo from './logo.svg';
 import './App.css';
+import {ButtonWrapper} from '../components/Button';
 
 function App() {
   return (
@@ -19,6 +21,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <ButtonWrapper type="danger"/>
+        <ButtonWrapper type="danger" loading={true}/>
+        </div>
     </div>
   );
 }
