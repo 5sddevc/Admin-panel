@@ -2,7 +2,9 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import logo from './logo.svg';
 import './App.css';
-import {ButtonWrapper} from '../components/Button';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import Login from "./login";
 
 function App() {
   return (
@@ -21,10 +23,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <div>
-        <ButtonWrapper type="danger"/>
-        <ButtonWrapper type="danger" loading={true}/>
-        </div>
     </div>
   );
 }
