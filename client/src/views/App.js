@@ -5,6 +5,9 @@ import './App.css';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Login from "./login";
+import { store } from "../store/configureStore";
+
+const action = (type, payload) => store.dispatch({type, payload});
 
 function App() {
   return (
@@ -22,6 +25,7 @@ function App() {
         >
           Learn React
         </a>
+        <Button onClick={() => action("Test", "New data")}></Button>
       </header>
     </div>
   );
