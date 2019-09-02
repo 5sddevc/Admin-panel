@@ -6,7 +6,9 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import Login from "./login";
 import { Provider } from "react-redux";
-import { store } from "../store/configureStore";
+import { store } from "../configureStore";
+
+import Shell from "./shell/shell"
 
 const action = (type, payload) => store.dispatch({type, payload});
 
@@ -28,6 +30,7 @@ function App() {
             Learn React
           </a>
           <Button onClick={() => action("Test", "New data")}></Button>
+          <Shell />
         </header>
       </div>
     </Provider>

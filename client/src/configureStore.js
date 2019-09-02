@@ -1,8 +1,8 @@
 import { applyMiddleware, createStore } from 'redux'
 import createSagaMiddleWare from 'redux-saga'
 
-import rootReducer from '../reducers/rootReducer'
-import rootSaga from '../sagas/rootSaga'
+import rootReducer from './reducers/rootReducer'
+import rootSaga from './sagas/rootSaga'
 
 // export default function configureStore(preloadedState) {
 
