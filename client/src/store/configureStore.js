@@ -2,12 +2,11 @@ import { applyMiddleware, createStore } from 'redux'
 import createSagaMiddleWare from 'redux-saga'
 
 import rootReducer from '../reducers/rootReducer'
+import rootSaga from '../sagas/rootSaga'
 
 // export default function configureStore(preloadedState) {
 
-console.log("TESTTEST", createSagaMiddleWare)
-
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleWare();
 
 //const middlewares = [loggerMiddleware, thunkMiddleware]
 //const middlewareEnhancer = applyMiddleware(...middlewares)
@@ -16,3 +15,5 @@ const sagaMiddleware = createSagaMiddleware();
 //const composedEnhancers = compose(...enhancers)
 
 export const store = createStore(rootReducer,  applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
