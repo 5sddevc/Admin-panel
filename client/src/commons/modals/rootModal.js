@@ -1,50 +1,56 @@
 import React from 'react';
+import { connect } from "react-redux";
 
-import { Modal } from 'antd';
-import Button from "../../components/Button"
+//import { Modal } from 'antd';
+
+import BasicModal from "./basicModal"
 
 class RootModal extends React.Component {
-  state = { visible: false };
+  // state = { visible: false };
 
-  showModal = () => {
-    this.setState({
-      visible: true,
-    });
-  };
+  // showModal = () => {
+  //   this.setState({
+  //     visible: true,
+  //   });
+  // };
 
-  handleOk = e => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  };
+  // handleOk = e => {
+  //   console.log(e);
+  //   this.setState({
+  //     visible: false,
+  //   });
+  // };
 
-  handleCancel = e => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  };
+  // handleCancel = e => {
+  //   console.log(e);
+  //   this.setState({
+  //     visible: false,
+  //   });
+  // };
+
+  modalComponent = {
+    basic_modal: BasicModal
+  }
 
   render() {
+    if (!this.props.modalType && !this.props.modalProps) {
+      return null;
+    }
+    const ModalToRender = this.modalComponent[this.props.modalType];
     return (
       <div>
-        <Button type="primary" onClick={this.showModal}>
-          Open Modal
-        </Button>
-        <Modal
+        {/* <Modal
           title="Basic Modal"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
+          visible={this.props.isOpen}
+          onOk={this.props.closeModal}
+          onCancel={this.props.closeModal}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Modal>
+          {this.props.content}
+        </Modal> */}
+        <ModalToRender {...this.props.modalProps} />
       </div>
     );
   }
 }
 
-export default RootModal;
+export default connect((state) => state.Modal)(RootModal);

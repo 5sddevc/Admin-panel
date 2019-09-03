@@ -1,4 +1,4 @@
-import { put, takeEvery, takeLatest, cancelled } from 'redux-saga/effects'
+import { put, takeLatest, cancelled } from 'redux-saga/effects'
 
 const delay = (ms) => new Promise((res, rej) => setTimeout(() => res(5), ms))
 

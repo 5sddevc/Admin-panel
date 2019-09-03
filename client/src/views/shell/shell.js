@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Button from '../../components/Button';
 
 import RootModal from "../../commons/modals/rootModal"
+import { openModal } from "../../actions/modalActions"
 
 class Shell extends React.Component {
 
@@ -11,6 +12,10 @@ class Shell extends React.Component {
     return (
       <div>
         <RootModal />
+        <Button type="primary" onClick={() => this.props.openModal("TESTING HEADING", <p>Lorem ipsum</p>)}>
+          Open Modal
+        </Button>
+        <br />
         {/* <Button></Button> */}
         {JSON.stringify(this.props.storeState)}
       </div>
@@ -18,4 +23,4 @@ class Shell extends React.Component {
   }
 }
 
-export default connect((state) => ({storeState: state}), null)(Shell);
+export default connect((state) => ({storeState: state}), { openModal })(Shell);
