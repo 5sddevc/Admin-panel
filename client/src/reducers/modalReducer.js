@@ -1,17 +1,21 @@
 import { OPEN_MODAL, CLOSE_MODAL } from "../configurations/types"
 
 const INITIAL_STATE = {
-  modalType: null
+  modals: []
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case OPEN_MODAL: {
       const { type, ...data } = action;
-      return Object.assign({}, state, data);
+      let newModals = [...state.modals];
+      newModals.push(data);
+      return Object.assign({}, state, {modals: newModals});
     }
     case CLOSE_MODAL: {
-      return INITIAL_STATE;
+      let newModals = [...state.modals];
+      newModals.pop();
+      return Object.assign({}, state, {modals: newModals});
     }
     default: {
       return INITIAL_STATE;

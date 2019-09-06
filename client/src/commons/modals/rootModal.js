@@ -33,21 +33,18 @@ class RootModal extends React.Component {
   }
 
   render() {
-    if (!this.props.modalType && !this.props.modalProps) {
+    if (!this.props.modals.length > 0) {
       return null;
     }
-    const ModalToRender = this.modalComponent[this.props.modalType];
+    const ModalsToRender = this.props.modals.map((val) => {
+      let ModalToRender = this.modalComponent[val.modalType];
+      console.log("MODAL", ModalToRender, this.modalComponent[val.modalType])
+      return <ModalToRender {...val.modalProps} />
+    })
+    console.log("MODALS", ModalsToRender);
     return (
       <div>
-        {/* <Modal
-          title="Basic Modal"
-          visible={this.props.isOpen}
-          onOk={this.props.closeModal}
-          onCancel={this.props.closeModal}
-        >
-          {this.props.content}
-        </Modal> */}
-        <ModalToRender {...this.props.modalProps} />
+        {ModalsToRender.map((val) => val)}
       </div>
     );
   }

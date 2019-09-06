@@ -4,8 +4,12 @@ import {Input} from 'antd';
 
 const InputWrapper = (props)=>{
     return (
-    <Input {...props}></Input>
+    props.password ? (
+        <Input.Password {...props}></Input.Password>
+    ) : (
+        <Input {...props}></Input>
+    )
     );
-    }
+}
 
 export default InputWrapper;

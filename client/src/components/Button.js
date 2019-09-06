@@ -8,7 +8,6 @@ const ButtonWrapper = (props)=>{
     <Button {...props}  
     //style={{color:primaryColor}}
     >
-        Button
     </Button>
     );
     }
