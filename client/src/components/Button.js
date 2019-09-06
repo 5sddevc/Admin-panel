@@ -1,5 +1,5 @@
 import React from 'react';
-import {primaryColor} from "../configurations/theme"
+//import {primaryColor} from "../configurations/theme"
 import {Button} from 'antd';
 
 
