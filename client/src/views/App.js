@@ -1,39 +1,21 @@
 import React from 'react';
-import 'antd/dist/antd.css';
-import logo from './logo.svg';
 import './App.css';
-import Button from '../components/Button';
-//import Input from '../components/Input';
-//import Login from "./login";
+import 'antd/dist/antd.css';
+import ReactDom from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../configureStore";
-
-import Shell from "./shell/shell"
+import Routes from "../Routes";
 
 const action = (type, payload) => store.dispatch({type, payload});
 
 function App() {
   return (
+    <BrowserRouter basename="/bufflunch-web-uat">
     <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <Button onClick={() => action("Test", "New data")}></Button>
-          <Shell />
-        </header>
-      </div>
+      <Routes/>
     </Provider>
+    </BrowserRouter>
   );
 }
 
