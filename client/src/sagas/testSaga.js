@@ -26,7 +26,6 @@ export function* incrementAsync() {
   console.log("In saga", res);
   yield put({ type: 'INCREMENT' })
 }
-
 // Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC
 export function* watchIncrementAsync() {
   yield takeLatest('Test', incrementAsync)

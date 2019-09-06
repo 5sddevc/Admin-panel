@@ -6,28 +6,7 @@ import { connect } from "react-redux";
 import BasicModal from "./basicModal"
 
 class RootModal extends React.Component {
-  // state = { visible: false };
-
-  // showModal = () => {
-  //   this.setState({
-  //     visible: true,
-  //   });
-  // };
-
-  // handleOk = e => {
-  //   console.log(e);
-  //   this.setState({
-  //     visible: false,
-  //   });
-  // };
-
-  // handleCancel = e => {
-  //   console.log(e);
-  //   this.setState({
-  //     visible: false,
-  //   });
-  // };
-
+ 
   modalComponent = {
     basic_modal: BasicModal
   }
@@ -38,10 +17,8 @@ class RootModal extends React.Component {
     }
     const ModalsToRender = this.props.modals.map((val) => {
       let ModalToRender = this.modalComponent[val.modalType];
-      console.log("MODAL", ModalToRender, this.modalComponent[val.modalType])
       return <ModalToRender {...val.modalProps} />
     })
-    console.log("MODALS", ModalsToRender);
     return (
       <div>
         {ModalsToRender.map((val) => val)}
