@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from "react-redux";
-import propTypes from 'prop-types';
 import { Modal } from 'antd';
 
 import { closeModal } from "../../actions/modalActions"
