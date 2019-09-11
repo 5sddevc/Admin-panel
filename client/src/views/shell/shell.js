@@ -1,42 +1,43 @@
-import React from 'react';
+import React from "react";
 import { connect } from "react-redux";
-import Button from '../../components/Button';
-import logo from '../logo.svg';
-import { openModal } from "../../actions/modalActions"
+import { openModal } from "../../actions/modalActions";
 import { store } from "../../configureStore";
+import { Layout, Menu, Icon, Button } from "antd";
 
-const action = (type, payload) => store.dispatch({type, payload});
+const { Header, Content, Footer, Sider } = Layout;
+
+const action = (type, payload) => store.dispatch({ type, payload });
 class Shell extends React.Component {
-
+  state = {
+    collapsed: false,
+  };
+  toggleCollapsed = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <Button onClick={() => action("Test", "New data")}>Saga Test</Button>
-          <div>
-        <Button type="primary" onClick={() => this.props.openModal("TESTING HEADING", <p>Lorem ipsum</p>)}>
-          Open Modal
+        <Layout>
+          <Header>
+          <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
         </Button>
-        <br />
-        {JSON.stringify(this.props.storeState)}
-      </div>
-        </header>
-        
+          </Header>
+          <Layout>
+            <Sider triger={null} collapsible={true} collapsedWidth={0}>left sidebar</Sider>
+            <Content>main content</Content>
+            <Sider collapsible={true} collapsedWidth={0} defaultCollapsed={true}>right sidebar</Sider>
+          </Layout>
+          <Footer>footer</Footer>
+        </Layout>
       </div>
     );
   }
 }
 
-export default connect((state) => ({storeState: state}), { openModal })(Shell);
+export default connect(
+  state => ({ storeState: state }),
+  { openModal }
+)(Shell);
