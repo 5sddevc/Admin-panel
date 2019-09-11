@@ -9,11 +9,13 @@ const { Header, Content, Footer, Sider } = Layout;
 const action = (type, payload) => store.dispatch({ type, payload });
 class Shell extends React.Component {
   state = {
-    collapsed: false,
+    collapsedRight: true,
+    collapsedLeft:true
   };
-  toggleCollapsed = () => {
+  toggleCollapsed = (type) => {
+    console.log({[type]: !this.state[type]})
     this.setState({
-      collapsed: !this.state.collapsed,
+      [type]: !this.state[type],
     });
   };
   render() {
@@ -21,14 +23,17 @@ class Shell extends React.Component {
       <div className="App">
         <Layout>
           <Header>
-          <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+          <Button type="primary" onClick={() => this.toggleCollapsed("collapsedLeft")} style={{ marginBottom: 16 }}>
+          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
+        </Button>
+        <Button type="primary" onClick={()=>this.toggleCollapsed("collapsedRight")} style={{ marginBottom: 16 }}>
           <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
         </Button>
           </Header>
           <Layout>
-            <Sider triger={null} collapsible={true} collapsedWidth={0}>left sidebar</Sider>
+            <Sider inlineCollapsed={this.state.collapsedLeft}  collapsedWidth={0} collapsed={this.state.collapsedLeft}>left sidebar</Sider>
             <Content>main content</Content>
-            <Sider collapsible={true} collapsedWidth={0} defaultCollapsed={true}>right sidebar</Sider>
+            <Sider inlineCollapsed={this.state.collapsedRight}  collapsedWidth={0} collapsed={this.state.collapsedRight}>right sidebar</Sider>
           </Layout>
           <Footer>footer</Footer>
         </Layout>
