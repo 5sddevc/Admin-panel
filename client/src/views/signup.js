@@ -12,19 +12,29 @@ const Signup = () => {
 				<Col span={8}>
 					<Card title="Sign up" headStyle={{ fontSize: 32 }}>
 						<Row>
-							<Input addonBefore={<Icon type="user" />} placeholder="Username" />
+							<Col span={24}>
+								<Input addonBefore={<Icon type="user" />} placeholder="Username" />
+							</Col>
 						</Row>
 						<Row style={{ marginTop: 20 }}>
-							<Input addonBefore={<Icon type="mail" />} placeholder="Email" />
+							<Col span={24}>
+								<Input addonBefore={<Icon type="mail" />} placeholder="Email" />
+							</Col>
 						</Row>
 						<Row style={{ marginTop: 20 }}>
-							<Input password addonBefore={<Icon type="lock" />} placeholder="Password" />
+							<Col span={24}>
+								<Input password addonBefore={<Icon type="lock" />} placeholder="Password" />
+							</Col>
 						</Row>
 						<Row style={{ marginTop: 20 }}>
-							<Input password addonBefore={<Icon type="lock" />} placeholder="Confirm Password" />
+							<Col span={24}>
+								<Input password addonBefore={<Icon type="lock" />} placeholder="Confirm Password" />
+							</Col>
 						</Row>
 						<Row style={{ marginTop: 20 }}>
-							<Button block size="large" type="primary">Sign up</Button>
+							<Col span={24}>
+								<Button block size="large" type="primary">Sign up</Button>
+							</Col>
 						</Row>
 					</Card>
 				</Col>
