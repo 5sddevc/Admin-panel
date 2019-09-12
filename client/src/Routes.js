@@ -7,7 +7,7 @@ import Login from './views/login'
 import Signup from './views/signup'
 import Shell from "./views/shell/shell";
 // import NotFound from "../NotFound";
-import RootModal from "./commons/modals/rootModal";
+import RootModal from "./commons/modals";
 
 class Routes extends React.Component {
   render() {

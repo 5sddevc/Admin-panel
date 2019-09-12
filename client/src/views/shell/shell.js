@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import Button from '../../components/Button';
 import logo from '../logo.svg';
-import { openModal } from "../../actions/modalActions"
+import { openModal } from "../../actions/modal"
 import { store } from "../../configureStore";
 
 const action = (type, payload) => store.dispatch({type, payload});
