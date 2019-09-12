@@ -1,9 +1,8 @@
 import React from "react";
 
-import Input from '../components/Input'
-import Button from '../components/Button'
-import { Layout, Card, Row, Col, Icon } from 'antd';
-
+import Input from "../components/Input";
+import Button from "../components/Button";
+import { Layout, Card, Row, Col, Icon } from "antd";
 
 const Login = () => {
   return (
@@ -33,7 +32,7 @@ const Login = () => {
         </Col>
       </Row>
     </Layout>
-  )
-}
+  );
+};
 
 export default Login;
