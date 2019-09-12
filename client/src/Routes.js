@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./views/login";
 import Signup from "./views/signup";
 import Shell from "./views/shell/Shell";
+import Testform from "./views/Testform";
 // import NotFound from "../NotFound";
 
 class Routes extends React.Component {
@@ -15,6 +16,7 @@ class Routes extends React.Component {
           <Route exact path="/" component={Shell} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/test" component={Testform} />
           {/* <Route exact path="/" component={Shell} /> */}
           {/* <Route path='*' exact={true} component={NotFound} />
           <Route path='/404' exact={true} component={NotFound} /> */}
