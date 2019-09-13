@@ -12,7 +12,6 @@ const RootForm = (props) => {
   console.log("PROPS", props)
   return (
   <div>
-    <h1>Test</h1>
     <Formik
       initialValues={{
         firstName: "",

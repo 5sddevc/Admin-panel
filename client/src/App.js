@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./configureStore";
-import Routes from "./routes";
+import Routes from "./Routes";
 import RootModal from "./commons/modals";
 
 function App() {
