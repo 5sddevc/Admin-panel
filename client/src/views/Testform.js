@@ -12,8 +12,12 @@ const Testform = () => {
         <Col span={8}>
           <Card title="Login" headStyle={{ fontSize: 32 }}>
           <RootForm 
-          controls={[{span:24,name: "firstName", Type: Input, addonBefore:<Icon type="user" />}, 
-               {span:24,name: "lastName", Type: Input, addonBefore:<Icon type="lock" />}]}/>
+          controls={[{span:24,name: "username", Type: Input, addonBefore:<Icon type="user" />}, 
+               {span:24,name: "password", Type: Input, addonBefore:<Icon type="lock" />}]
+               } 
+          submitButton={{span:8,buttonText:"Login"}}
+          isLink={{span:8,status:true,linktext:"Forgot Password?",url:"#"}}
+          />
           </Card>
         </Col>
       </Row>
