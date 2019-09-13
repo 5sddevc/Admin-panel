@@ -1,46 +1,81 @@
 import React from "react";
 
-import Input from '../components/Input'
-import Button from '../components/Button'
-import { Layout, Card, Row, Col, Icon } from 'antd';
+import Input from "../components/Input";
+import Button from "../components/Button";
+import {signupValidations} from "../configurations/Schema";
+import RootForm from "../components/RootForm";
+import { Layout, Card, Row, Col, Icon } from "antd";
 
+class Signup extends React.Component {
+  state = {
+    username: "",
+    email:"",
+    password: "",
+    conformPassword:"",
+  };
+  handleChanged = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-const Signup = () => {
-	return (
-		<Layout style={{ height: "100vh", justifyContent: "center" }}>
-			<Row type="flex" justify="center" align="middle">
-				<Col span={8}>
-					<Card title="Sign up" headStyle={{ fontSize: 32 }}>
-						<Row>
-							<Col span={24}>
-								<Input addonBefore={<Icon type="user" />} placeholder="Username" />
-							</Col>
-						</Row>
-						<Row style={{ marginTop: 20 }}>
-							<Col span={24}>
-								<Input addonBefore={<Icon type="mail" />} placeholder="Email" />
-							</Col>
-						</Row>
-						<Row style={{ marginTop: 20 }}>
-							<Col span={24}>
-								<Input password addonBefore={<Icon type="lock" />} placeholder="Password" />
-							</Col>
-						</Row>
-						<Row style={{ marginTop: 20 }}>
-							<Col span={24}>
-								<Input password addonBefore={<Icon type="lock" />} placeholder="Confirm Password" />
-							</Col>
-						</Row>
-						<Row style={{ marginTop: 20 }}>
-							<Col span={24}>
-								<Button block size="large" type="primary">Sign up</Button>
-							</Col>
-						</Row>
-					</Card>
-				</Col>
-			</Row>
-		</Layout>
-	)
+  render() {
+    console.log("Login State", this.state);
+  return (
+    <Layout style={{ height: "100vh", justifyContent: "center" }}>
+      <Row type="flex" justify="center" align="middle">
+        <Col span={8}>
+          <Card title="Register" headStyle={{ fontSize: 32 }}>
+            <RootForm
+              schemaName={signupValidations}
+              initialValues={this.state}
+              controls={[
+                {
+                  span: 24,
+                  name: "username",
+                  value: this.state.username,
+                  handleChanged: this.handleChanged,
+                  placeholder: "Username",
+                  Type: Input,
+                  addonBefore: <Icon type="user" />
+                },
+                {
+                  span: 24,
+                  name: "email",
+                  value: this.state.email,
+                  handleChanged: this.handleChanged,
+                  placeholder: "Email",
+                  Type: Input,
+                  addonBefore: <Icon type="mail" />
+                },
+                {
+                  span: 24,
+                  name: "password",
+                  value: this.state.password,
+                  handleChanged: this.handleChanged,
+                  placeholder: "Password",
+                  Type: Input,
+                  addonBefore: <Icon type="lock" />
+                },
+                {
+                  span: 24,
+                  name: "conformPassword",
+                  value: this.state.conformPassword,
+                  handleChanged: this.handleChanged,
+                  placeholder: "Conform Password",
+                  Type: Input,
+                  addonBefore: <Icon type="lock" />
+                }
+              ]}
+              submitButton={{ span: 24, buttonText: "Create Account" }}
+            />
+          </Card>
+        </Col>
+      </Row>
+    </Layout>
+  );
+};
 }
 
 export default Signup;
