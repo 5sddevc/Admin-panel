@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import testReducer from './testReducer';
-import modalReducer from './modalReducer';
+import testReducer from './test';
+import modalReducer from './modal';
 
 
 export default combineReducers({

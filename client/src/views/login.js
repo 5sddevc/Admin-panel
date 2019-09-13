@@ -11,24 +11,16 @@ const Login = () => {
         <Col span={8}>
           <Card title="Login" headStyle={{ fontSize: 32 }}>
             <Row>
-              <Input
-                addonBefore={<Icon type="user" />}
-                placeholder="Username"
-              />
+              <Col span={24}>
+                <Input addonBefore={<Icon type="user" />} placeholder="Username" />
+              </Col>
             </Row>
             <Row style={{ marginTop: 20 }}>
-              <Input
-                password
-                addonBefore={<Icon type="lock" />}
-                placeholder="Password"
-              />
+              <Col span={24}>
+                <Input password addonBefore={<Icon type="lock" />} placeholder="Password" />
+              </Col>
             </Row>
-            <Row
-              type="flex"
-              justify="space-between"
-              align="middle"
-              style={{ marginTop: 20 }}
-            >
+            <Row type="flex" justify="space-between" align="middle" style={{ marginTop: 20 }}>
               <Col>
                 <Button type="primary">Login</Button>
               </Col>

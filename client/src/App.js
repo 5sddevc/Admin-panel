@@ -4,12 +4,12 @@ import "antd/dist/antd.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./configureStore";
-import Routes from "./Routes";
-import RootModal from "./commons/modals/rootModal";
+import Routes from "./routes";
+import RootModal from "./commons/modals";
 
 function App() {
   return (
-    <BrowserRouter basename="/bufflunch-web-uat">
+    <BrowserRouter>
       <Provider store={store}>
         <Routes />
         <RootModal />

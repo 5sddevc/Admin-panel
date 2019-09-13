@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 //import { Modal } from 'antd';
 
-import BasicModal from "./basicModal"
+import BasicModal from "./basic"
 
 class RootModal extends React.Component {
  
