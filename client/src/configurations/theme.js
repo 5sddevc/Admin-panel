@@ -28,12 +28,18 @@ const theme = {
             "dark": "#d32f2f",
             "contrastText": "#ffffff"
         },
-        "text": {
+        "textColor": {
             "primary": "rgba(12, 19, 48, 1)",
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(12, 19, 48, 1)"
+        },
+        "textWeight": {
+            "bold": 600,
+            "normal": 400,
+            "lighter": 300,
         }
+
     },
     "dark": {
         "common": {

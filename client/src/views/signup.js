@@ -11,7 +11,7 @@ class Signup extends React.Component {
     username: "",
     email:"",
     password: "",
-    conformPassword:"",
+    confirmPassword:"",
   };
   handleChanged = e => {
     const { name, value } = e.target;
@@ -60,10 +60,10 @@ class Signup extends React.Component {
                 },
                 {
                   span: 24,
-                  name: "conformPassword",
-                  value: this.state.conformPassword,
+                  name: "confirmPassword",
+                  value: this.state.confirmPassword,
                   handleChanged: this.handleChanged,
-                  placeholder: "Conform Password",
+                  placeholder: "Confirm Password",
                   Type: Input,
                   addonBefore: <Icon type="lock" />
                 }
