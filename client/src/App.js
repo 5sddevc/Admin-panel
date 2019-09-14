@@ -3,7 +3,7 @@ import "./App.css";
 import "antd/dist/antd.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./configureStore";
+import { store } from "./ConfigureStore";
 import Routes from "./Routes";
 import RootModal from "./commons/modals";
 
