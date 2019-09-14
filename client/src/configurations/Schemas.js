@@ -14,10 +14,10 @@ const signupValidations = Yup.object().shape({
   .min(5, "Password is Too Short! it must be between 5 and 16 characters")
   .max(16, "Password is Too Long! it must be between 5 and 16 characters")
   .required("Password Required"),
-  conformPassword: Yup.string()
+  confirmPassword: Yup.string()
   .min(5, "Password is Too Short! it must be between 5 and 16 characters")
   .max(16, "Password is Too Long! it must be between 5 and 16 characters")
-  .required("Conform Password Required"),
+  .required("Confirm Password Required"),
   
 });
 const loginValidations = Yup.object().shape({

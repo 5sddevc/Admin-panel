@@ -19,23 +19,28 @@ const RootForm = props => {
           loginApiCall(values);
         }}
       >
-        {({ handleSubmit, errors, touched }) => (
+        {({ values, 
+          touched,
+          errors,
+          dirty,
+          isSubmitting,
+          handleChange,
+          handleBlur,
+          handleSubmit }) => (
           <Form>
             <Row>
               {props.controls.map(val => (
                 <Col key={val.name} span={val.span}>
                   <val.Type
                     password={
-                      val.name === "password" || val.name === "conformPassword"
+                      val.name === "password" || val.name === "confirmPassword"
                         ? true
                         : false
                     }
                     name={val.name}
-                    value={val.value}
-                    onChange={e => {
-                      val.handleChanged(e);
-                      console.log(val);
-                    }}
+                    value={values[val.name]}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     placeholder={val.placeholder}
                     addonBefore={val.addonBefore}
                   />
@@ -52,7 +57,7 @@ const RootForm = props => {
               style={{ justifyContent: "space-between", paddingTop: 8 }}
             >
               <Col span={props.submitButton.span}>
-                <Button onClick={handleSubmit} type="submit">{`${props.submitButton.buttonText}`}</Button>
+                <Button block onClick={handleSubmit} type="submit">{`${props.submitButton.buttonText}`}</Button>
               </Col>
               {typeof props.isLink !== "undefined" ? (
                 <Col span={props.isLink.span}>
