@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 // Register and Login Screen
-import Login from "./views/login";
-import Signup from "./views/signup";
+import Login from "./views/Login";
+import Signup from "./views/Signup";
 import Shell from "./views/shell/Shell";
 // import NotFound from "../NotFound";
 

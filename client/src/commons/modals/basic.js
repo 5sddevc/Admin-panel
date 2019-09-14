@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { Modal } from 'antd';
 
-import { closeModal } from "../../actions/modal"
+import { closeModal } from "../../actions/Modal"
 
 const BasicModal = (props) => {
   return (

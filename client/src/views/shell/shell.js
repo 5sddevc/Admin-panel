@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { openModal } from "../../actions/modal"
+import { openModal } from "../../actions/Modal"
 import { store } from "../../configureStore";
-import { ThemeContext, theme } from "../../configurations/theme"
+import { ThemeContext, theme } from "../../configurations/Theme"
 import { Layout, Menu, Icon, Button } from "antd";
 
 const { Header, Content, Footer, Sider } = Layout;

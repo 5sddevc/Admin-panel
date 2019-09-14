@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from "../configurations/types"
+import { OPEN_MODAL, CLOSE_MODAL } from "../configurations/Types"
 
 const INITIAL_STATE = {
   modals: []

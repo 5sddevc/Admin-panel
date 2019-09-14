@@ -2,6 +2,8 @@ import React from "react";
 import { Formik, Form } from "formik";
 import { Row, Col } from "antd";
 
+import Button from "../components/Button"
+
 const loginApiCall = values => {
   console.log(values);
 };
@@ -17,7 +19,7 @@ const RootForm = props => {
           loginApiCall(values);
         }}
       >
-        {({ errors, touched }) => (
+        {({ handleSubmit, errors, touched }) => (
           <Form>
             <Row>
               {props.controls.map(val => (
@@ -50,7 +52,7 @@ const RootForm = props => {
               style={{ justifyContent: "space-between", paddingTop: 8 }}
             >
               <Col span={props.submitButton.span}>
-                <button type="submit">{`${props.submitButton.buttonText}`}</button>
+                <Button onClick={handleSubmit} type="submit">{`${props.submitButton.buttonText}`}</Button>
               </Col>
               {typeof props.isLink !== "undefined" ? (
                 <Col span={props.isLink.span}>
