@@ -1,8 +1,8 @@
 import React from "react";
 
-import Input from "../components/Input/Input";
-import Button from "../components/Button/Button";
-import RootForm from "../commons/Form/RootForm";
+import Input from "../components/input/index";
+import Button from "../components/button/index";
+import RootForm from "../commons/form/index";
 import { loginValidations } from "../configurations/Schemas";
 import { Layout, Card, Row, Col, Icon } from "antd";
 

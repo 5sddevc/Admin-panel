@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { Row, Col } from "antd";
-import Button from "../../components/Button/Button"
+import Button from "../../components/button/index"
 
 const loginApiCall = values => {
   console.log(values);
