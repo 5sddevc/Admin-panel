@@ -1,7 +1,10 @@
 import React from "react";
 import { Layout, Menu, Icon, Button } from "antd";
-import { Row, Col } from "antd";
-import {HeaderLogo} from "../../configurations/Constants";
+import { Row, Col, Badge, Avatar } from "antd";
+import { HeaderLogo } from "../../configurations/Constants";
+import { FiBell, FiMail } from "react-icons/fi";
+// import Badge from "../../components/badge/index";
+// import Avatar from "../../components/avatar/index";
 
 export default class HeaderContent extends React.Component {
   constructor(props) {
@@ -13,14 +16,17 @@ export default class HeaderContent extends React.Component {
         <Row type="flex">
           <Col span={4}>
             <div className="logo">
-              <img src={HeaderLogo} style={{ width: "128px", height: "64px" }}></img>
+              <img
+                src={HeaderLogo}
+                style={{ width: "128px", height: "64px" }}
+              ></img>
             </div>
           </Col>
           <Col span={2}>
             <Button
               type="primary"
               onClick={() => this.props.toggleCollapsed("collapsedLeft")}
-              style={{ marginBottom: 16 }}
+              style={{ marginBottom: 16, zIndex: 10 }}
             >
               <Icon
                 type={
@@ -29,7 +35,7 @@ export default class HeaderContent extends React.Component {
               />
             </Button>
           </Col>
-          <Col span={16}>
+          <Col span={14}>
             <Menu
               theme="dark"
               mode="horizontal"
@@ -42,18 +48,63 @@ export default class HeaderContent extends React.Component {
             </Menu>
           </Col>
 
-          <Col span={2}>
-            <Button
-              type="primary"
-              onClick={() => this.props.toggleCollapsed("collapsedRight")}
-              style={{ marginBottom: 16 }}
+          <Col span={4}>
+            <Row
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                
+                // margin: "4px auto"
+              }}
             >
-              <Icon
-                type={
-                  this.props.state.collapsedRight ? "menu-fold" : "menu-unfold"
-                }
-              />
-            </Button>
+              <Col span={5} style={{padding:"10px"}}>
+                <Badge count={10} style={{ color: "white"}}>
+                  <FiBell
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                      color: "white"
+                    }}
+                  />
+                </Badge>
+              </Col>
+              <Col span={5} style={{padding:"10px"}}>
+                <Badge count={5} style={{ color: "white"}}>
+                  <FiMail
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                      color: "white"
+                    }}
+                  />
+                </Badge>
+              </Col>
+              <Col span={6} >
+                <Badge dot style={{ color: "white"}}>
+                  <Avatar
+                    shape="circle"
+                    size="40px"
+                    icon="user"
+                    style={{ color: "white" }}
+                  />
+                </Badge>
+              </Col>
+              <Col span={8}>
+                <Button
+                  type="primary"
+                  onClick={() => this.props.toggleCollapsed("collapsedRight")}
+                  style={{ zIndex: 10 }}
+                >
+                  <Icon
+                    type={
+                      this.props.state.collapsedRight
+                        ? "menu-fold"
+                        : "menu-unfold"
+                    }
+                  />
+                </Button>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </div>
