@@ -1,6 +1,6 @@
-import React from './node_modules/react';
+import React from 'react';
 import {primaryColor} from "../../configurations/Theme"
-import {Input} from './node_modules/antd';
+import {Input} from 'antd';
 
 const InputWrapper = (props)=>{
     return (
