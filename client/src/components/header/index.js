@@ -8,8 +8,8 @@ const HeaderWrapper = props => {
   return (
     <Header style={{ padding: "0px" }}>
       <HeaderContent
-        state={props.children.props.state}
-        toggleCollapsed={props.children.props.toggleCollapsed}
+        state={props.state}
+        toggleCollapsed={props.toggleCollapsed}
       />
     </Header>
   );

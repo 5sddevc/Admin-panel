@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, Menu, Icon, Button } from "antd";
 import { Row, Col, Badge, Avatar } from "antd";
-import { HeaderLogo } from "../../configurations/Constants";
+import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
 // import Badge from "../../components/badge/index";
 // import Avatar from "../../components/avatar/index";
@@ -16,10 +16,7 @@ export default class HeaderContent extends React.Component {
         <Row type="flex">
           <Col span={4}>
             <div className="logo">
-              <img
-                src={HeaderLogo}
-                style={{ width: "128px", height: "64px" }}
-              ></img>
+              <HeaderLogo/>
             </div>
           </Col>
           <Col span={2}>
@@ -49,16 +46,9 @@ export default class HeaderContent extends React.Component {
           </Col>
 
           <Col span={4}>
-            <Row
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                
-                // margin: "4px auto"
-              }}
-            >
-              <Col span={5} style={{padding:"10px"}}>
-                <Badge count={10} style={{ color: "white"}}>
+            <Row Type="flex" justifyContent="space-between">
+              <Col span={5} style={{ padding: "10px" }}>
+                <Badge count={10} style={{ color: "white" }}>
                   <FiBell
                     style={{
                       width: "24px",
@@ -68,8 +58,8 @@ export default class HeaderContent extends React.Component {
                   />
                 </Badge>
               </Col>
-              <Col span={5} style={{padding:"10px"}}>
-                <Badge count={5} style={{ color: "white"}}>
+              <Col span={5} style={{ padding: "10px" }}>
+                <Badge count={5} style={{ color: "white" }}>
                   <FiMail
                     style={{
                       width: "24px",
@@ -79,8 +69,8 @@ export default class HeaderContent extends React.Component {
                   />
                 </Badge>
               </Col>
-              <Col span={6} >
-                <Badge dot style={{ color: "white"}}>
+              <Col span={6}>
+                <Badge dot style={{ color: "white" }}>
                   <Avatar
                     shape="circle"
                     size="40px"
