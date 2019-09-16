@@ -51,9 +51,9 @@ const RootForm = props => {
             </Row>
             <Row
               type="flex"
-              justify="center"
+              justify="space-between"
               align="middle"
-              style={{ justifyContent: "space-between", paddingTop: 8 }}
+              style={{ paddingTop: 8 }}
             >
               <Col span={props.submitButton.span}>
                 <Button block onClick={handleSubmit} type="submit">{`${props.submitButton.buttonText}`}</Button>

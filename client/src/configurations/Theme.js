@@ -1,6 +1,6 @@
 import React from "react";
 
-const theme = {
+export const theme = {
     "light": {
         "common": {
             "black": "#0C1330",

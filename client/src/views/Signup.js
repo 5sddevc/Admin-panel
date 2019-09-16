@@ -1,9 +1,9 @@
 import React from "react";
 
-import Input from "../components/input/index";
-import Button from "../components/button/index";
+import Input from "../components/input";
+import Button from "../components/button";
 import {signupValidations} from "../configurations/Schemas";
-import RootForm from "../commons/form/index";
+import RootForm from "../commons/form";
 import { Layout, Card, Row, Col, Icon } from "antd";
 
 class Signup extends React.Component {
