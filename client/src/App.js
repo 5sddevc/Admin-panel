@@ -1,27 +1,22 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./App.css";
 import "antd/dist/antd.css";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./configurations/Theme";
-import { store } from "./ConfigureStore";
 import Routes from "./Routes";
 import RootModal from "./commons/modals";
 
-function App() {
+function App(props) {
+  console.log("PROPS", props)
   return (
-    <BrowserRouter>
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <React.Fragment>
-            <Routes />
-            <RootModal />
-          </React.Fragment>
-        </ThemeProvider>
-      </Provider>
-    </BrowserRouter>
+    <ThemeProvider theme={theme[props.app.theme]}>
+      <React.Fragment>
+        <Routes />
+        <RootModal />
+      </React.Fragment>
+    </ThemeProvider>
   );
 }
 
-export default App;
+export default connect((storeState) => ({ app: storeState.App }))(App);

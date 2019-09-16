@@ -2,11 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 import { openModal } from "../../actions/Modal";
 import { store } from "../../ConfigureStore";
-import { ThemeContext, theme } from "../../configurations/Theme";
-import { Layout, Menu, Icon, Button } from "antd";
-import HeaderContent from "./Header";
-
-const { Header, Content, Footer, Sider } = Layout;
+import { ThemeContext} from "../../configurations/Theme";
+import { Layout} from "antd";
+import HeaderWrapper from "../../components/header/index";
+import {
+  LeftSideMenuWrapper,
+  RightSideMenuWrapper
+} from "../../components/sidebars/index";
+import MainContentWrapper from "../../components/maincontent/index";
+import FooterWrapper from "../../components/footer/index";
 
 const action = (type, payload) => store.dispatch({ type, payload });
 class Shell extends React.Component {
@@ -25,30 +29,17 @@ class Shell extends React.Component {
     return (
       <div className="App">
         <Layout>
-          <Header style={{padding:"0px"}}>
-            <HeaderContent
-              state={this.state}
-              toggleCollapsed={this.toggleCollapsed}
-            />
-          </Header>
+          <HeaderWrapper
+            style={{ padding: "0px" }}
+            state={this.state}
+            toggleCollapsed={this.toggleCollapsed}
+          />
           <Layout>
-            <Sider
-              inlineCollapsed={this.state.collapsedLeft}
-              collapsedWidth={0}
-              collapsed={this.state.collapsedLeft}
-            >
-              left sidebar
-            </Sider>
-            <Content>main content</Content>
-            <Sider
-              inlineCollapsed={this.state.collapsedRight}
-              collapsedWidth={0}
-              collapsed={this.state.collapsedRight}
-            >
-              right sidebar
-            </Sider>
+            <LeftSideMenuWrapper state={this.state} />
+            <MainContentWrapper/>
+            <RightSideMenuWrapper state={this.state} />
           </Layout>
-          <Footer>footer</Footer>
+          <FooterWrapper/>
         </Layout>
       </div>
     );

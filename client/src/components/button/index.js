@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {Button} from 'antd';
 
 const StyledButton = styled(Button)`
-   color: ${props => props.theme.light.primary.main};
+   color: ${props => props.theme.primary.main};
    font-weight: bold;
 `;
 

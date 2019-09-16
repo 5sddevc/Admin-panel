@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-//import {primaryColor} from "../../configurations/Theme"
 import {Input} from 'antd';
 
 const StyledInput = styled(Input).attrs(() => ({}))`
