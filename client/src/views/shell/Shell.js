@@ -4,7 +4,7 @@ import { openModal } from "../../actions/Modal";
 import { store } from "../../ConfigureStore";
 import { ThemeContext, theme } from "../../configurations/Theme";
 import { Layout, Menu, Icon, Button } from "antd";
-import HeaderContent from "./Header";
+import HeaderContent from "../../commons/header/index";
 
 const { Header, Content, Footer, Sider } = Layout;
 
