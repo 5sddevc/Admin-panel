@@ -1,6 +1,6 @@
-import React from 'react';
+import React from './node_modules/react';
 //import {primaryColor} from "../configurations/theme"
-import {Button} from 'antd';
+import {Button} from './node_modules/antd';
 
 
 const ButtonWrapper = (props)=>{
