@@ -4,8 +4,10 @@ import { Menu, Icon, Button } from "antd";
 import { Row, Col, Badge, Avatar } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
+import PopoverWrapper from "../popover/index";
 // import Badge from "../../components/badge/index";
 // import Avatar from "../../components/avatar/index";
+
 
 export default class HeaderContent extends React.Component {
   constructor(props) {
@@ -74,13 +76,18 @@ export default class HeaderContent extends React.Component {
               </Col>
               <Col span={6}>
                 <Badge dot style={{ color: "white" }}>
+                {/* <PopoverWrapper text={textTest} content={contentTest}> */}
                   <Avatar
                     shape="circle"
                     size="40px"
                     icon="user"
                     style={{ color: "white" }}
                   />
+                  {/* </PopoverWrapper> */}
                 </Badge>
+                {/* <PopoverWrapper >
+                <Button>Test</Button>
+                </PopoverWrapper> */}
               </Col>
               <Col span={8}>
                 <Button
