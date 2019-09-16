@@ -7,7 +7,7 @@ const {Content } = Layout;
 
 const ContentWrapper = props => {
   return (
-    <Content>main content</Content>
+    <Content>{props.children}</Content>
   );
 };
 

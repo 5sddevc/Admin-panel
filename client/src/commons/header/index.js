@@ -39,9 +39,10 @@ export default class HeaderContent extends React.Component {
               defaultSelectedKeys={["1"]}
               style={{ position: "fixed", lineHeight: "64px" }}
             >
-              <Menu.Item key="1">nav 1</Menu.Item>
-              <Menu.Item key="2">nav 2</Menu.Item>
-              <Menu.Item key="3">nav 3</Menu.Item>
+              <Menu.Item key="1">Dashboard</Menu.Item>
+              <Menu.Item key="2">Users</Menu.Item>
+              <Menu.Item key="3">Reports</Menu.Item>
+              <Menu.Item key="4">Requests</Menu.Item>
             </Menu>
           </Col>
 

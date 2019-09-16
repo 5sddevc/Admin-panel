@@ -8,11 +8,10 @@ const {Sider } = Layout;
 const rightSideMenuWrapper = props => {
   return (
     <Sider
-    // inlineCollapsed={props.state.collapsedRight}
     collapsedWidth={0}
     collapsed={props.state.collapsedRight}
   >
-    <p style={{color:"white"}}>Right Side Bar Menu</p>
+    <p style={{height:"40px", whiteSpace: "nowrap", color:"white"}}>Right Side Bar Menu</p>
   </Sider>
   );
 };
