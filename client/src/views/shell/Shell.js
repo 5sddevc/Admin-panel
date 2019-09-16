@@ -15,7 +15,8 @@ import FooterWrapper from "../../components/footer/index";
 import Dashboard from "./Dashboard";
 import Users from "./Users"; 
 import Reports from "./Reports";
-import Requests from "./Requests"; 
+import Requests from "./Requests";
+import Settings from "./Settings" ;
 
 
 const action = (type, payload) => store.dispatch({ type, payload });
@@ -49,6 +50,7 @@ class Shell extends React.Component {
                 <Route exact path ='/users' component={Users}/>
                 <Route exact path ='/reports' component={Reports}/>
                 <Route exact path ='/requests' component={Requests}/>
+                <Route exact path ='/settings' component={Settings}/>
               </Switch> 
             </ContentWrapper>
             <RightSideMenuWrapper state={this.state} />

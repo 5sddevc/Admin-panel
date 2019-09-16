@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { Menu, Icon, Button } from "antd";
 import { Row, Col, Badge, Avatar } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
@@ -39,10 +40,11 @@ export default class HeaderContent extends React.Component {
               defaultSelectedKeys={["1"]}
               style={{ position: "fixed", lineHeight: "64px" }}
             >
-              <Menu.Item key="1">Dashboard</Menu.Item>
-              <Menu.Item key="2">Users</Menu.Item>
-              <Menu.Item key="3">Reports</Menu.Item>
-              <Menu.Item key="4">Requests</Menu.Item>
+              <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
+              <Menu.Item key="2" ><Link to="/users">Users</Link></Menu.Item>
+              <Menu.Item key="3"><Link to="/reports">Reports</Link></Menu.Item>
+              <Menu.Item key="4"><Link to="/requests">Requests</Link></Menu.Item>
+              <Menu.Item key="5"><Link to="/settings">Settings</Link></Menu.Item>
             </Menu>
           </Col>
 
