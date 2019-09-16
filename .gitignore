@@ -13,3 +13,7 @@ client/node_modules/
 
 # Ignore SASS config files
 .sass-cache
+
+# Ignore Package-lock.json file in React`
+client/package-lock.json
+*-lock.json

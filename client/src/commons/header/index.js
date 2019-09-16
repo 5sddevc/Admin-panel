@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { Menu, Icon, Button } from "antd";
 import { connect } from "react-redux";
 import Switch from "../../components/switch";
@@ -6,6 +7,7 @@ import { toggleTheme } from "../../actions/App"
 import { Row, Col, Badge, Avatar } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
+import PopoverWrapper from "../popover/index";
 // import Badge from "../../components/badge/index";
 // import Avatar from "../../components/avatar/index";
 
@@ -42,9 +44,11 @@ class HeaderContent extends React.Component {
               defaultSelectedKeys={["1"]}
               style={{ position: "fixed", lineHeight: "64px" }}
             >
-              <Menu.Item key="1">nav 1</Menu.Item>
-              <Menu.Item key="2">nav 2</Menu.Item>
-              <Menu.Item key="3">nav 3</Menu.Item>
+              <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
+              <Menu.Item key="2" ><Link to="/users">Users</Link></Menu.Item>
+              <Menu.Item key="3"><Link to="/reports">Reports</Link></Menu.Item>
+              <Menu.Item key="4"><Link to="/requests">Requests</Link></Menu.Item>
+              <Menu.Item key="5"><Link to="/settings">Settings</Link></Menu.Item>
             </Menu>
 
             <span style={{ color: "white" }}>
@@ -79,13 +83,18 @@ class HeaderContent extends React.Component {
               </Col>
               <Col span={6}>
                 <Badge dot style={{ color: "white" }}>
+                {/* <PopoverWrapper text={textTest} content={contentTest}> */}
                   <Avatar
                     shape="circle"
                     size="40px"
                     icon="user"
                     style={{ color: "white" }}
                   />
+                  {/* </PopoverWrapper> */}
                 </Badge>
+                {/* <PopoverWrapper >
+                <Button>Test</Button>
+                </PopoverWrapper> */}
               </Col>
               <Col span={8}>
                 <Button

@@ -12,7 +12,7 @@ const StyledContent = styled(Content)`
 
 const ContentWrapper = props => {
   return (
-    <StyledContent {...props}>main content</StyledContent>
+    <StyledContent {...props}>{props.children}</StyledContent>
   );
 };
 
