@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, Menu, Icon, Button } from "antd";
 import { Row, Col } from "antd";
-import Logo from "../../assets/images/textlogo.svg";
+import {HeaderLogo} from "../../configurations/Constants";
 
 export default class HeaderContent extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class HeaderContent extends React.Component {
         <Row type="flex">
           <Col span={4}>
             <div className="logo">
-              <img src={Logo} style={{ width: "128px", height: "64px" }}></img>
+              <img src={HeaderLogo} style={{ width: "128px", height: "64px" }}></img>
             </div>
           </Col>
           <Col span={2}>
