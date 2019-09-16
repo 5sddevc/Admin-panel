@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu, Icon, Button } from "antd";
+import { Menu, Icon, Button } from "antd";
 import { Row, Col, Badge, Avatar } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
@@ -46,7 +46,7 @@ export default class HeaderContent extends React.Component {
           </Col>
 
           <Col span={4}>
-            <Row Type="flex" justifyContent="space-between">
+            <Row type="flex" justifycontent="space-between">
               <Col span={5} style={{ padding: "10px" }}>
                 <Badge count={10} style={{ color: "white" }}>
                   <FiBell

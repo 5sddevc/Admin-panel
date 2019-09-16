@@ -1,5 +1,4 @@
 import React from 'react';
-import {primaryColor} from "../../configurations/Theme"
 import {Input} from 'antd';
 
 const InputWrapper = (props)=>{

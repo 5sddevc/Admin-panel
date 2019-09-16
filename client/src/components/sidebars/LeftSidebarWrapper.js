@@ -8,7 +8,7 @@ const {Sider } = Layout;
 const LeftSideMenuWrapper = props => {
   return (
     <Sider
-    inlineCollapsed={props.state.collapsedLeft}
+    // inlineCollapsed={props.state.collapsedLeft}
     collapsedWidth={0}
     collapsed={props.state.collapsedLeft}
   >

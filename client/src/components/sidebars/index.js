@@ -1,4 +1,3 @@
-import React from "react";
 import leftSideMenuWrapper from "./LeftSidebarWrapper";
 import rightSideMenuWrapper from "./RightSidebarWrapper";
 

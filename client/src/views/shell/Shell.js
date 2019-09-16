@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { openModal } from "../../actions/Modal";
 import { store } from "../../ConfigureStore";
-import { ThemeContext, theme } from "../../configurations/Theme";
-import { Layout, Menu, Icon, Button } from "antd";
+import { ThemeContext} from "../../configurations/Theme";
+import { Layout} from "antd";
 import HeaderWrapper from "../../components/header/index";
 import {
   LeftSideMenuWrapper,
