@@ -4,12 +4,13 @@ import { Menu, Icon, Button } from "antd";
 import { connect } from "react-redux";
 import Switch from "../../components/switch";
 import { toggleMode } from "../../actions/App"
-import { Row, Col, Badge, Avatar } from "antd";
+import { Row, Col } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
 import PopoverWrapper from "../popover/index";
-// import Badge from "../../components/badge/index";
-// import Avatar from "../../components/avatar/index";
+import MenuWrapper from "../../components/menu";
+import Badge from "../../components/badge/index";
+import Avatar from "../../components/avatar/index";
 
 class HeaderContent extends React.Component {
   constructor(props) {
@@ -40,8 +41,7 @@ class HeaderContent extends React.Component {
           <Col span={14}>
             <Row type="flex" justify="space-between">
               <Col>
-                <Menu
-                  theme="dark"
+                <MenuWrapper
                   mode="horizontal"
                   defaultSelectedKeys={["1"]}
                   style={{ lineHeight: "64px" }}
@@ -51,7 +51,7 @@ class HeaderContent extends React.Component {
                   <Menu.Item key="3"><Link to="/reports">Reports</Link></Menu.Item>
                   <Menu.Item key="4"><Link to="/requests">Requests</Link></Menu.Item>
                   <Menu.Item key="5"><Link to="/settings">Settings</Link></Menu.Item>
-                </Menu>
+                </MenuWrapper>
               </Col>
 
               <Col>
@@ -89,18 +89,15 @@ class HeaderContent extends React.Component {
               </Col>
               <Col span={6}>
                 <Badge dot style={{ color: "white" }}>
-                {/* <PopoverWrapper text={textTest} content={contentTest}> */}
+                <PopoverWrapper title={"Asdasd"} content={"qweqwe"}>
                   <Avatar
                     shape="circle"
                     size="40px"
                     icon="user"
                     style={{ color: "white" }}
                   />
-                  {/* </PopoverWrapper> */}
+                  </PopoverWrapper>
                 </Badge>
-                {/* <PopoverWrapper >
-                <Button>Test</Button>
-                </PopoverWrapper> */}
               </Col>
               <Col span={8}>
                 <Button

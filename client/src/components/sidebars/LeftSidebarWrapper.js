@@ -1,5 +1,6 @@
 import React from "react";
-import { Layout} from "antd";
+import { Layout } from "antd";
+import { LeftSideBarMenu } from "../../commons/sidebarMenus"
 
 
 
@@ -10,10 +11,9 @@ const LeftSideMenuWrapper = props => {
     <Sider
     collapsedWidth={0}
     collapsed={props.state.collapsedLeft}
+    theme={"light"}
   >
-    <p style={{ 
-      //whiteSpace: "nowrap", 
-      color:"white" }}>Left Side Bar Menu</p>
+    <LeftSideBarMenu />
   </Sider>
   );
 };
