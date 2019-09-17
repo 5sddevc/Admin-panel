@@ -12,10 +12,9 @@ class Routes extends React.Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/" component={Shell} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          {/* <Route exact path="/" component={Shell} /> */}
+          <Route path="/" component={Shell} />
           {/* <Route path='*' exact={true} component={NotFound} />
           <Route path='/404' exact={true} component={NotFound} /> */}
         </Switch>
