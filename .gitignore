@@ -15,5 +15,6 @@ client/node_modules/
 .sass-cache
 
 # Ignore Package-lock.json file in React`
+package-lock.json
 client/package-lock.json
 *-lock.json
