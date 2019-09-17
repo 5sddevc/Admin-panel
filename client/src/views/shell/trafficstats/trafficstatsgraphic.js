@@ -3,6 +3,7 @@ import { Row, Col, Icon } from "antd";
 import CardWrapper from "../../../commons/card/index";
 import StatisticWrapper from "../../../components/cards/Statistics";
 import trafficData from "../../../mocks/trafficstats";
+import RenderChart from "../../Chart";
 
 const TrafficStatsGraphic = () => {
   return (
@@ -14,7 +15,7 @@ const TrafficStatsGraphic = () => {
           bordered={true}
           headStyle={{ display: "flex" }}
         >
-          <Col span={24}>Graph Stats Component Loading ......</Col>
+          <Col span={24}><RenderChart/></Col>
           <Col span={6}>
             <CardWrapper>
               <StatisticWrapper
