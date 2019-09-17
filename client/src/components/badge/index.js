@@ -2,7 +2,7 @@ import React from "react";
 import { Badge  } from "antd";
 
 const BadgeWrapper = props => {
-  return <Badge dot>
+  return <Badge {...props}>
 
   </Badge>;
 };

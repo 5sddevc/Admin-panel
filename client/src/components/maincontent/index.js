@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout} from "antd";
+import {Layout} from "antd";
 import styled from "styled-components";
 
 const {Content} = Layout;
@@ -13,7 +13,7 @@ const StyledContent = styled(Content)`
 
 const ContentWrapper = props => {
   return (
-    <StyledContent {...props}>{props.children}</StyledContent>
+    <StyledContent {...props}></StyledContent>
   );
 };
 
