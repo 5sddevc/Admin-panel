@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Icon, Divider, Progress } from "antd";
 import CardWrapper from "../../../commons/card/index";
 import ProgressWrapper from "../../../components/progress/index";
+import AvatarWrapper from "../../../components/avatar/index";
 
 const TrafficAndSales = props => {
   return (
@@ -152,7 +153,21 @@ const TrafficAndSales = props => {
                 </h3>
               </Col>
               <Divider />
-              Col 2.2
+              <Col span={24}>
+              <Col span={8}><AvatarWrapper /></Col>
+                <Col span={16}>Male</Col>
+              </Col>
+              <Col span={24}>
+                <ProgressWrapper percent={61} strokeColor="#ffc107" />
+                
+              </Col>
+              <Col span={24}>
+                <Col span={8}><AvatarWrapper /></Col>
+                <Col span={16}>Female</Col>
+              </Col>
+              <Col span={24}>
+                <ProgressWrapper percent={39} strokeColor="#ffc107" />
+              </Col>
             </Col>
             <Col span={24}>Users Table</Col>
           </Row>

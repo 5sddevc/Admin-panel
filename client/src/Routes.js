@@ -5,7 +5,6 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Shell from "./views/shell/Shell";
-import renderChart from "./views/Chart"
 // import NotFound from "../NotFound";
 
 class Routes extends React.Component {
@@ -15,7 +14,6 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/graph" component={renderChart} />
           <Route path="/" component={Shell} />
           {/* <Route path='*' exact={true} component={NotFound} />
           <Route path='/404' exact={true} component={NotFound} /> */}
