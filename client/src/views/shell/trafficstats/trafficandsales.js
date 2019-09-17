@@ -19,17 +19,15 @@ const TrafficAndSales = props => {
           >
             <Col span={12}>
               Col 1
-              <Divider /> 
+              <Divider />
               COl 1.1
             </Col>
             <Col span={12}>
-                Col 2
-                <Divider/>
-                Col 2.2
+              Col 2
+              <Divider />
+              Col 2.2
             </Col>
-            <Col span={24}>
-                Users Table
-            </Col>
+            <Col span={24}>Users Table</Col>
           </Row>
         </CardWrapper>
       </Col>
