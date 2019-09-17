@@ -1,5 +1,5 @@
 import React from "react";
-const { Popover } = 'antd';
+import { Popover } from 'antd';
 const textTest = <span>Title</span>;
 const contentTest = (
   <div>
@@ -10,8 +10,7 @@ const contentTest = (
 const PopoverWrapper = (props) => {
     console.log(props);
   return(
-    <Popover placement="bottomRight" title={textTest} content={contentTest} trigger="click">
-    {props.children}
+    <Popover placement="bottomRight" {...props} trigger="click">
   </Popover>
   );
 };
