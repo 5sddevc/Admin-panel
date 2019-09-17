@@ -14,10 +14,6 @@ class Dashboard extends React.Component {
         >
           <TrafficStatsGraphic />
           <TrafficAndSales/>
-
-          <Col span={24} style={{ color: "white", backgroundColor: "black" }}>
-            Card 6
-          </Col>
         </Row>
       </React.Fragment>
     );
