@@ -1,6 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { Menu, Icon, Button } from "antd";
+import { connect } from "react-redux";
+import Switch from "../../components/switch";
+import { toggleTheme } from "../../actions/App"
 import { Row, Col, Badge, Avatar } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
@@ -8,8 +11,7 @@ import PopoverWrapper from "../popover/index";
 // import Badge from "../../components/badge/index";
 // import Avatar from "../../components/avatar/index";
 
-
-export default class HeaderContent extends React.Component {
+class HeaderContent extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -48,6 +50,11 @@ export default class HeaderContent extends React.Component {
               <Menu.Item key="4"><Link to="/requests">Requests</Link></Menu.Item>
               <Menu.Item key="5"><Link to="/settings">Settings</Link></Menu.Item>
             </Menu>
+
+            <span style={{ color: "white" }}>
+              Toggle theme
+              <Switch onChange={() => {this.props.dispatch(toggleTheme())}} style={{ marginLeft: 10}} defaultChecked={true}></Switch>
+            </span>
           </Col>
 
           <Col span={4}>
@@ -111,3 +118,5 @@ export default class HeaderContent extends React.Component {
     );
   }
 }
+
+export default connect(null)(HeaderContent)

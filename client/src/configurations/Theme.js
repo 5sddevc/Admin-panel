@@ -1,14 +1,14 @@
 import React from "react";
 
-const theme = {
+export const theme = {
     "light": {
         "common": {
             "black": "#0C1330",
             "white": "#fff"
         },
         "background": {
-            "paper": "#ffffff",
-            "default": "#fafafa"
+            "primary": "#ffffff",
+            "secondary": "#e4e5e6"
         },
         "primary": {
             "light": "rgba(255, 255, 255, 0)",
@@ -47,8 +47,8 @@ const theme = {
             "white": "#0C1330"
         },
         "background": {
-            "paper": "#000000",
-            "default": "#ffffff"
+            "primary": "#3a4149",
+            "secondary": "#2f353a"
         },
         "primary": {
             "light": "rgba(255, 255, 255, 0)",

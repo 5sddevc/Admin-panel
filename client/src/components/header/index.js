@@ -1,17 +1,25 @@
 import React from "react";
 import { Layout } from "antd";
+import styled from "styled-components";
 
 import HeaderContent from "../../commons/header/index";
 
 const { Header } = Layout;
+
+const StyledHeader = styled(Header)`
+  background: ${props => props.theme.background.primary};
+//   font-weight: bold;
+//   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
+`;
+
 const HeaderWrapper = props => {
   return (
-    <Header style={{ padding: "0px" }}>
+    <StyledHeader style={{ padding: "0px" }}>
       <HeaderContent
         state={props.state}
         toggleCollapsed={props.toggleCollapsed}
       />
-    </Header>
+    </StyledHeader>
   );
 };
 
