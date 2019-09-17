@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
           justify="space-between"
         >
           <TrafficStatsGraphic />
-          <TrafficAndSales/>
+          <TrafficAndSales />
         </Row>
       </React.Fragment>
     );
