@@ -68,10 +68,10 @@ class HeaderContent extends React.Component {
               <Col span={5} style={{ padding: "10px" }}>
                 <Badge count={10} style={{ color: "white" }}>
                   <FiBell
+                    className="headerIcon"
                     style={{
                       width: "24px",
                       height: "24px",
-                      color: "white"
                     }}
                   />
                 </Badge>
@@ -79,10 +79,10 @@ class HeaderContent extends React.Component {
               <Col span={5} style={{ padding: "10px" }}>
                 <Badge count={5} style={{ color: "white" }}>
                   <FiMail
+                    className="headerIcon"
                     style={{
                       width: "24px",
                       height: "24px",
-                      color: "white"
                     }}
                   />
                 </Badge>
