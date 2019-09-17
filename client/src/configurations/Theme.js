@@ -29,7 +29,7 @@ export const theme = {
             "contrastText": "#ffffff"
         },
         "textColor": {
-            "primary": "rgba(12, 19, 48, 1)",
+            "primary": "rgba(0, 0, 0, 0.65);",
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(12, 19, 48, 1)"
@@ -68,12 +68,12 @@ export const theme = {
             "dark": "#d32f2f",
             "contrastText": "#ffffff"
         },
-        "text": {
-            "primary": "rgba(12, 19, 48, 1)",
+        "textColor": {
+            "primary": "rgba(255, 255, 255, 0.65);",
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(12, 19, 48, 1)"
-        }
+        },
     }
 };
 

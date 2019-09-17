@@ -10,7 +10,7 @@ import RootModal from "./commons/modals";
 function App(props) {
   console.log("PROPS", props)
   return (
-    <ThemeProvider theme={theme[props.app.theme]}>
+    <ThemeProvider theme={{...theme, mode: props.app.mode}}>
       <React.Fragment>
         <Routes />
         <RootModal />

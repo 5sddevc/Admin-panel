@@ -11,7 +11,9 @@ const LeftSideMenuWrapper = props => {
     collapsedWidth={0}
     collapsed={props.state.collapsedLeft}
   >
-    <p style={{color:"white"}}>Left Side Bar Menu</p>
+    <p style={{ 
+      //whiteSpace: "nowrap", 
+      color:"white" }}>Left Side Bar Menu</p>
   </Sider>
   );
 };

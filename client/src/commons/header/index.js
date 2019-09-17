@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import { Menu, Icon, Button } from "antd";
 import { connect } from "react-redux";
 import Switch from "../../components/switch";
-import { toggleTheme } from "../../actions/App"
+import { toggleMode } from "../../actions/App"
 import { Row, Col, Badge, Avatar } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
@@ -38,23 +38,29 @@ class HeaderContent extends React.Component {
             </Button>
           </Col>
           <Col span={14}>
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={["1"]}
-              style={{ position: "fixed", lineHeight: "64px" }}
-            >
-              <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
-              <Menu.Item key="2" ><Link to="/users">Users</Link></Menu.Item>
-              <Menu.Item key="3"><Link to="/reports">Reports</Link></Menu.Item>
-              <Menu.Item key="4"><Link to="/requests">Requests</Link></Menu.Item>
-              <Menu.Item key="5"><Link to="/settings">Settings</Link></Menu.Item>
-            </Menu>
+            <Row type="flex" justify="space-between">
+              <Col>
+                <Menu
+                  theme="dark"
+                  mode="horizontal"
+                  defaultSelectedKeys={["1"]}
+                  style={{ lineHeight: "64px" }}
+                >
+                  <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
+                  <Menu.Item key="2" ><Link to="/users">Users</Link></Menu.Item>
+                  <Menu.Item key="3"><Link to="/reports">Reports</Link></Menu.Item>
+                  <Menu.Item key="4"><Link to="/requests">Requests</Link></Menu.Item>
+                  <Menu.Item key="5"><Link to="/settings">Settings</Link></Menu.Item>
+                </Menu>
+              </Col>
 
-            <span style={{ color: "white" }}>
-              Toggle theme
-              <Switch onChange={() => {this.props.dispatch(toggleTheme())}} style={{ marginLeft: 10}} defaultChecked={true}></Switch>
-            </span>
+              <Col>
+                <span>
+                  Toggle mode
+                  <Switch onChange={() => {this.props.dispatch(toggleMode())}} style={{ marginLeft: 10}} defaultChecked={true}></Switch>
+                </span>
+              </Col>
+            </Row>
           </Col>
 
           <Col span={4}>

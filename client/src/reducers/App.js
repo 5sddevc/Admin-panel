@@ -1,13 +1,13 @@
-import { TOGGLE_THEME } from "../configurations/Types"
+import { TOGGLE_MODE } from "../configurations/Types"
 
 const INITIAL_STATE = {
-  theme: "light"
+  mode: "light"
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case TOGGLE_THEME: {
-      return Object.assign({}, state, {theme: state.theme === "light" ? "dark" : "light"});
+    case TOGGLE_MODE: {
+      return Object.assign({}, state, {mode: state.mode === "light" ? "dark" : "light"});
     }
     default: {
       return INITIAL_STATE;

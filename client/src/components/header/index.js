@@ -7,7 +7,8 @@ import HeaderContent from "../../commons/header/index";
 const { Header } = Layout;
 
 const StyledHeader = styled(Header)`
-  background: ${props => props.theme.background.primary};
+  background: ${props => props.theme[props.theme.mode].background.primary};
+  color: ${props => props.theme[props.theme.mode].textColor.primary}; 
 //   font-weight: bold;
 //   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
 `;

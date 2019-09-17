@@ -11,7 +11,10 @@ const rightSideMenuWrapper = props => {
     collapsedWidth={0}
     collapsed={props.state.collapsedRight}
   >
-    <p style={{height:"40px", whiteSpace: "nowrap", color:"white"}}>Right Side Bar Menu</p>
+    <p style={{
+      //height:"40px", 
+      //whiteSpace: "nowrap", 
+      color:"white" }}>Right Side Bar Menu</p>
   </Sider>
   );
 };
