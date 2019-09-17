@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu } from "antd";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledMenu = styled(Menu)`
   background: ${props => props.theme[props.theme.mode].background.primary};
@@ -13,6 +13,18 @@ const StyledMenu = styled(Menu)`
 
   && a, && li {
     color: ${props => props.theme[props.theme.mode].textColor.primary};
+  }
+  
+  ${props => props.mode === "horizontal" ? null : css`
+    && .ant-menu-item-selected {
+      background: #1890ff;
+      color: ${props => props.theme["dark"].textColor.primary};
+    }
+    ${props => props.theme.mode === "light" ? null : css`
+      .ant-menu-item:active {
+        background: #1062af;
+      }`
+    }`
   }
 //   font-weight: bold;
 //   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);

@@ -1,21 +1,30 @@
 import React from "react";
-import { Layout} from "antd";
+import { Layout } from "antd";
+import styled from "styled-components";
 
+const { Sider } = Layout;
 
+const StyledSider = styled(Sider)`
+  background: ${props => props.theme[props.theme.mode].background.primary};
+  color: ${props => props.theme[props.theme.mode].textColor.primary}; 
+  
+  transition: width 0.2s, min-width 0.2s, max-width 0.2s, flex 0.2s, background 0s;
 
-const {Sider } = Layout;
+  && * {
+    transition: width 0.2s, min-width 0.2s, max-width 0.2s, flex 0.2s,  background 0s;
+  }
+//   font-weight: bold;
+//   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
+`;
 
 const rightSideMenuWrapper = props => {
   return (
-    <Sider
+    <StyledSider
     collapsedWidth={0}
     collapsed={props.state.collapsedRight}
   >
-    <p style={{
-      //height:"40px", 
-      //whiteSpace: "nowrap", 
-      color:"white" }}>Right Side Bar Menu</p>
-  </Sider>
+    <p>Right Side Bar Menu</p>
+  </StyledSider>
   );
 };
 

@@ -8,7 +8,8 @@ export const theme = {
         },
         "background": {
             "primary": "#ffffff",
-            "secondary": "#e4e5e6"
+            "secondary": "#e4e5e6",
+            "tertiary": "#f0f3f5"
         },
         "primary": {
             "light": "rgba(255, 255, 255, 0)",
@@ -38,7 +39,8 @@ export const theme = {
             "bold": 600,
             "normal": 400,
             "lighter": 300,
-        }
+        },
+        "border": "#c8ced3"
 
     },
     "dark": {
@@ -48,7 +50,8 @@ export const theme = {
         },
         "background": {
             "primary": "#3a4149",
-            "secondary": "#2f353a"
+            "secondary": "#2f353a",
+            "tertiary": "#343b41"
         },
         "primary": {
             "light": "rgba(255, 255, 255, 0)",
@@ -69,11 +72,12 @@ export const theme = {
             "contrastText": "#ffffff"
         },
         "textColor": {
-            "primary": "rgba(255, 255, 255, 0.65);",
+            "primary": "rgba(255, 255, 255, 1);",
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(12, 19, 48, 1)"
         },
+        "border": "#23282c"
     }
 };
 
