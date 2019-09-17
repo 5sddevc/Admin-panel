@@ -1,7 +1,6 @@
 import React from "react";
 
 import Input from "../components/input/index";
-import Button from "../components/button/index";
 import RootForm from "../commons/form/index";
 import { loginValidations } from "../configurations/Schemas";
 import { Layout, Card, Row, Col, Icon } from "antd";
@@ -48,7 +47,7 @@ class Login extends React.Component {
                     addonBefore: <Icon type="lock" />
                   }
                 ]}
-                submitButton={{ span: 8, buttonText: "Login" }}
+                submitButton={{ span: 8, buttonText: "Log In" }}
                 isLink={{
                   span: 8,
                   status: "true",

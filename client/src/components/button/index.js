@@ -5,6 +5,7 @@ import { Button } from 'antd';
 
 
 const ButtonWrapper = (props) => {
+  console.log('Button Style', props);
   return (
     <Button {...props}
     //style={{color:primaryColor}}
@@ -16,7 +17,7 @@ const ButtonWrapper = (props) => {
 ButtonWrapper.propTypes = {
   children: propTypes.string.isRequired,
   block: propTypes.bool.isRequired,
-  loading: propTypes.bool.isRequired,
+  // loading: propTypes.bool.isRequired,
   onClick: propTypes.func,
 }
 

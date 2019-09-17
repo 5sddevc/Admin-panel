@@ -33,8 +33,8 @@ const RootForm = props => {
                   <val.Type
                     password={
                       val.name === "password" || val.name === "confirmPassword"
-                        ? true
-                        : false
+                        ? "true"
+                        : "false"
                     }
                     name={val.name}
                     value={values[val.name]}

@@ -11,9 +11,9 @@ export const buttonProp = {
 }
 
 export const functionProp = {
-  onClick: action('Click Event'),
+  onClick: action('Click Event '),
 }
 
 storiesOf('AntDesign Button', module)
   .add('Default', () => <ButtonWrapper {...buttonProp} {...functionProp}/>)
-  .add('Loading', () => <ButtonWrapper block={false} children={"Loading"} loading={true} {...functionProp} />)
+  .add('Loading', () => <ButtonWrapper block={false} children={"Loading"} loading={true} {...functionProp}/>)
