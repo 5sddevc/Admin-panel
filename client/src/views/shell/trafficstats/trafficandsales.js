@@ -32,11 +32,11 @@ class TrafficAndSales extends React.Component {
         dataIndex: 'email',
       },
       {
-        title: 'operation',
+        title: 'Action',
         dataIndex: 'operation',
         render: (text, record) =>
           this.state.data.length >= 1 ? (
-            <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(record.key)}>
+            <Popconfirm title="Sure to delete?" onConfirm={() => {console.log("record", record.id.value); this.handleDelete(record.id.value)}}>
               <a>Delete</a>
             </Popconfirm>
           ) : null,
@@ -67,9 +67,9 @@ class TrafficAndSales extends React.Component {
       ...filters,
     });
   };
-  handleDelete = key => {
+  handleDelete = value => {
     const data = [...this.state.data];
-    this.setState({ data: data.filter(item => item.key !== key) });
+    this.setState({ data: data.filter(item => item.id.value !== value) });
   };
 
   fetch = (params = {}) => {
@@ -96,6 +96,7 @@ class TrafficAndSales extends React.Component {
     });
   };
   render(){
+    console.log("Table State",this.state);
     const columns = this.columns.map(col => {
         return col;
     });
