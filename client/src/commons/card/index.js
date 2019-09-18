@@ -18,7 +18,7 @@ const StyledCard = styled(Card)`
   // }
 
   &.mainContentDiv {
-    margin-bottom  ${props => props.theme[props.theme.mode].spacing}px;
+    margin-bottom: ${props => props.theme[props.theme.mode].spacing}px;
   }
 
   .innerContentSpacing {

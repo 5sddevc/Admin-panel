@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
       return Object.assign({}, state, {mode: state.mode === "light" ? "dark" : "light"});
     }
     default: {
-      return INITIAL_STATE;
+      return state;
     }
   }
 }
