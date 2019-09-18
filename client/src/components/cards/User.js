@@ -1,6 +1,9 @@
 import React from "react";
 import Avatar from "../avatar/index";
 import { Card, Row, Col } from "antd";
+
+
+
 const { Meta } = Card;
 
 
