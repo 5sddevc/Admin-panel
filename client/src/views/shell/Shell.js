@@ -5,6 +5,7 @@ import { openModal } from "../../actions/Modal";
 import { store } from "../../ConfigureStore";
 import { ThemeContext } from "../../configurations/Theme";
 import { Layout } from "antd";
+import {menuShow} from "../../configurations/Config";
 import HeaderWrapper from "../../components/header/index";
 import {
   LeftSideMenuWrapper,
@@ -43,7 +44,7 @@ class Shell extends React.Component {
             toggleCollapsed={this.toggleCollapsed}
           />
           <Layout>
-            <LeftSideMenuWrapper state={this.state} />
+            {(menuShow.leftMenu===true)?<LeftSideMenuWrapper state={this.state} />:null}
             <ContentWrapper>
               <Switch>
                 <Route exact path ='/' component={Dashboard}/>
@@ -53,7 +54,7 @@ class Shell extends React.Component {
                 <Route exact path ='/settings' component={Settings}/>
               </Switch> 
             </ContentWrapper>
-            <RightSideMenuWrapper state={this.state} />
+            {(menuShow.rightMenu===true)?<RightSideMenuWrapper state={this.state} />: null}
           </Layout>
           <FooterWrapper />
         </Layout>
