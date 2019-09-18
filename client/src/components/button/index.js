@@ -17,7 +17,6 @@ const ButtonWrapper = (props) => {
 ButtonWrapper.propTypes = {
   children: propTypes.string.isRequired,
   block: propTypes.bool.isRequired,
-  // loading: propTypes.bool.isRequired,
   onClick: propTypes.func,
 }
 

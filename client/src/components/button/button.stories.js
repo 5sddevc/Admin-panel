@@ -11,9 +11,11 @@ export const buttonProp = {
 }
 
 export const functionProp = {
-  onClick: action('Click Event '),
+  onClick: action('Click Event'),
 }
 
-storiesOf('AntDesign Button', module)
+storiesOf('Button', module)
+  .addDecorator(story => <div style={{margin: '10px'}} >{story()}</div>)
   .add('Default', () => <ButtonWrapper {...buttonProp} {...functionProp}/>)
   .add('Loading', () => <ButtonWrapper block={false} children={"Loading"} loading={true} {...functionProp}/>)
+  .add('Disabled', () => <ButtonWrapper block={false} children={"Disabled"} disabled={true} {...functionProp}/>)
