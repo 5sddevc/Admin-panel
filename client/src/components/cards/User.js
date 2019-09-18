@@ -15,8 +15,8 @@ const UserCard = props => {
       avatar={
         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       }
-      title="User Name"
-      description="This is the description"
+      title={props.title}
+      description={props.description}
     ></Meta>
   );
 };
