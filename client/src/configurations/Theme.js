@@ -12,7 +12,7 @@ export const theme = {
             "tertiary": "#f0f3f5"
         },
         "primary": {
-            "light": "rgba(255, 255, 255, 0)",
+            "light": "#e6f7ff",
             "main": "#1890ff",
             "dark": "#303f9f",
             "contrastText": "rgba(255, 255, 255, 1)",
@@ -56,7 +56,7 @@ export const theme = {
             "tertiary": "#343b41"
         },
         "primary": {
-            "light": "rgba(255, 255, 255, 0)",
+            "light": "#0f61af",
             "main": "#1890ff",
             "dark": "#303f9f",
             "contrastText": "rgba(255, 255, 255, 1)",

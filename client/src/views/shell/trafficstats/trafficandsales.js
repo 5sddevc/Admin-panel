@@ -296,7 +296,7 @@ class TrafficAndSales extends React.Component {
               
               <Col className="innerContentSpacing" span={24}>
                 <TableWrapper
-                  bordered={true}
+                  //bordered={true}
                   columns={columns}
                   rowKey={record => record.login.uuid}
                   dataSource={this.state.data}

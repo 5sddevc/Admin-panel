@@ -18,11 +18,15 @@ const StyledCard = styled(Card)`
   // }
 
   &.mainContentDiv {
-    margin-bottom  ${props => props.theme[props.theme.mode].spacing}px;
+    margin-bottom: ${props => props.theme[props.theme.mode].spacing}px;
   }
 
   .innerContentSpacing {
     margin-top: ${props => props.theme[props.theme.mode].spacing}px;
+  }
+
+  && .innerContentSpacing & .ant-card-body{
+    background: ${props => props.theme[props.theme.mode].background.tertiary};
   }
 
   && .ant-card-head {
@@ -31,7 +35,7 @@ const StyledCard = styled(Card)`
     border-radius : 0;
   }
 
-  && .ant-card-body {
+  .ant-card-body {
     background: ${props => props.theme[props.theme.mode].background.primary};
   }
 //   font-weight: bold;
