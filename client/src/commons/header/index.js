@@ -68,6 +68,7 @@ class HeaderContent extends React.Component {
             <Row type="flex" justifycontent="space-between">
               <Col span={5} style={{ padding: "10px" }}>
                 <Badge count={10} style={{ color: "white" }}>
+                <PopoverWrapper title={"Notifications"} content={"Loading ..."}>
                   <FiBell
                     className="headerIcon"
                     style={{
@@ -75,10 +76,12 @@ class HeaderContent extends React.Component {
                       height: "24px",
                     }}
                   />
+                  </PopoverWrapper>
                 </Badge>
               </Col>
               <Col span={5} style={{ padding: "10px" }}>
                 <Badge count={5} style={{ color: "white" }}>
+                <PopoverWrapper title={"Messages"} content={"Loading ..."}>
                   <FiMail
                     className="headerIcon"
                     style={{
@@ -86,11 +89,12 @@ class HeaderContent extends React.Component {
                       height: "24px",
                     }}
                   />
+                  </PopoverWrapper>
                 </Badge>
               </Col>
               <Col span={6}>
                 <Badge dot style={{ color: "white" }}>
-                <PopoverWrapper title={"Asdasd"} content={"qweqwe"}>
+                <PopoverWrapper title={"Account"} content={"... pending"}>
                   <Avatar
                     shape="circle"
                     size="40px"
