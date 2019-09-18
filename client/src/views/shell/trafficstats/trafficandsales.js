@@ -102,8 +102,8 @@ class TrafficAndSales extends React.Component {
     });
     return (
       <React.Fragment>
-        <Col className="mainContentDiv" span={24}>
-          <CardWrapper
+        <Col span={24}>
+          <CardWrapper className="mainContentDiv"
             type="inner"
             title={"Traffic & Sales"}
             bordered={true}

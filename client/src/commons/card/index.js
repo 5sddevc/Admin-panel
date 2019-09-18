@@ -2,7 +2,6 @@ import React from "react";
 import { Card, Icon, Avatar } from "antd";
 import styled from "styled-components";
 
-const { Meta } = Card;
 
 const StyledCard = styled(Card)`
   color: ${props => props.theme[props.theme.mode].textColor.primary};
@@ -14,8 +13,12 @@ const StyledCard = styled(Card)`
     transition: none;
   }
 
-  .mainContentDiv:not(:first-child) & {
-    margin-top: ${props => props.theme[props.theme.mode].spacing}px;
+  // .mainContentDiv:not(:first-child) & {
+  //   margin-top: ${props => props.theme[props.theme.mode].spacing}px;
+  // }
+
+  &.mainContentDiv {
+    margin-bottom  ${props => props.theme[props.theme.mode].spacing}px;
   }
 
   .innerContentSpacing {

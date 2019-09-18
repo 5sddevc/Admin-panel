@@ -8,8 +8,8 @@ import RenderChart from "../../Chart";
 const TrafficStatsGraphic = () => {
   return (
     <React.Fragment>
-      <Col className="mainContentDiv" span={24}>
-        <CardWrapper
+      <Col span={24}>
+        <CardWrapper className="mainContentDiv"
           type="inner"
           title={"Traffic Statictics"}
           bordered={true}

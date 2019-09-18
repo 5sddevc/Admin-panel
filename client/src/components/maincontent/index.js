@@ -9,6 +9,7 @@ const StyledContent = styled(Content)`
   color: ${props => props.theme[props.theme.mode].textColor.primary}; 
 
   padding: ${props => props.theme[props.theme.mode].spacing}px;
+  padding-bottom: 0;
 
   height: calc(100vh - 64px - 38px);
 //   font-weight: bold;
