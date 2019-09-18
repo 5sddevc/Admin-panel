@@ -1,34 +1,55 @@
 import Chance from "chance";
 import moment from "moment";
 
+
 const usersData = () => {
-  return [
+  let data = [
+    {
+      username: "hing123",
+      description: "Some Description",
+      email: "hing@tmailservices.com",
+      joined: "2011-01-06",
+      status: "Active"
+    },
+    {
+      username: "ng123",
+      description: "Some Description",
+      email: "ng@tmailservices.com",
+      joined: "2016-08-02",
+      status: "Active"
+    },
     {
       username: "Tester12345",
+      description: "Some Description",
       email: "tisa@tmailservices.com",
       joined: "2018-1-12",
-      status:"Active"
+      status: "Active"
     },
     {
       username: "tss12345",
+      description: "Some Description",
       email: "tisssa@tmailservices.com",
       joined: "2017-09-10",
-      status:"Active"
+      status: "Active"
     },
     {
       username: "ster",
+      description: "Some Description",
       email: "iamtisa@tmailservices.com",
       joined: "2016-02-23",
-      status:"Active"
+      status: "Active"
     },
     {
-        username: "aster",
-        email: "aiamtisa@tmailservices.com",
-        joined: "2012-06-01",
-        status:"Active"
-      }
+      username: "aster",
+      description: "Some Description",
+      email: "aiamtisa@tmailservices.com",
+      joined: "2012-06-01",
+      status: "Active"
+    }
   ];
+  return data;
 };
+
 const userDetails = () => {
   const chance = new Chance();
   const index = Math.round(Math.random() * 3);
