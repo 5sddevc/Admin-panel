@@ -1,10 +1,10 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, Icon, Button } from "antd";
-import {menuShow} from "../../configurations/Config";
+import { menuShow } from "../../configurations/Config";
 import { connect } from "react-redux";
 import Switch from "../../components/switch";
-import { toggleMode } from "../../actions/App"
+import { toggleMode } from "../../actions/App";
 import { Row, Col } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
@@ -23,21 +23,23 @@ class HeaderContent extends React.Component {
         <Row type="flex">
           <Col span={4}>
             <div className="logo">
-              <HeaderLogo/>
+              <HeaderLogo />
             </div>
           </Col>
           <Col span={2}>
-          {(menuShow.leftMenu===true)? <Button
-              type="primary"
-              onClick={() => this.props.toggleCollapsed("collapsedLeft")}
-              style={{ marginBottom: 16, zIndex: 10 }}
-            >
-              <Icon
-                type={
-                  this.props.state.collapsedLeft ? "menu-unfold" : "menu-fold"
-                }
-              />
-            </Button> :null}
+            {menuShow.leftMenu === true ? (
+              <Button
+                type="primary"
+                onClick={() => this.props.toggleCollapsed("collapsedLeft")}
+                style={{ marginBottom: 16, zIndex: 10 }}
+              >
+                <Icon
+                  type={
+                    this.props.state.collapsedLeft ? "menu-unfold" : "menu-fold"
+                  }
+                />
+              </Button>
+            ) : null}
           </Col>
           <Col span={14}>
             <Row type="flex" justify="space-between">
@@ -47,18 +49,34 @@ class HeaderContent extends React.Component {
                   defaultSelectedKeys={["1"]}
                   style={{ lineHeight: "62px" }}
                 >
-                  <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
-                  <Menu.Item key="2" ><Link to="/users">Users</Link></Menu.Item>
-                  <Menu.Item key="3"><Link to="/reports">Reports</Link></Menu.Item>
-                  <Menu.Item key="4"><Link to="/requests">Requests</Link></Menu.Item>
-                  <Menu.Item key="5"><Link to="/settings">Settings</Link></Menu.Item>
+                  <Menu.Item key="1">
+                    <Link to="/">Dashboard</Link>
+                  </Menu.Item>
+                  <Menu.Item key="2">
+                    <Link to="/users">Users</Link>
+                  </Menu.Item>
+                  <Menu.Item key="3">
+                    <Link to="/reports">Reports</Link>
+                  </Menu.Item>
+                  <Menu.Item key="4">
+                    <Link to="/requests">Requests</Link>
+                  </Menu.Item>
+                  <Menu.Item key="5">
+                    <Link to="/settings">Settings</Link>
+                  </Menu.Item>
                 </MenuWrapper>
               </Col>
 
               <Col>
                 <span>
                   Switch Theme
-                  <Switch onChange={() => {this.props.dispatch(toggleMode())}} style={{ marginLeft: 10}} defaultChecked={true}></Switch>
+                  <Switch
+                    onChange={() => {
+                      this.props.dispatch(toggleMode());
+                    }}
+                    style={{ marginLeft: 10 }}
+                    defaultChecked={true}
+                  ></Switch>
                 </span>
               </Col>
             </Row>
@@ -68,56 +86,61 @@ class HeaderContent extends React.Component {
             <Row type="flex" justifycontent="space-between">
               <Col span={5} style={{ padding: "10px" }}>
                 <Badge count={10} style={{ color: "white" }}>
-                <PopoverWrapper title={"Notifications"} content={"Loading ..."}>
-                  <FiBell
-                    className="headerIcon"
-                    style={{
-                      width: "24px",
-                      height: "24px",
-                    }}
-                  />
+                  <PopoverWrapper
+                    title={"Notifications"}
+                    content={"Loading ..."}
+                  >
+                    <FiBell
+                      className="headerIcon"
+                      style={{
+                        width: "24px",
+                        height: "24px"
+                      }}
+                    />
                   </PopoverWrapper>
                 </Badge>
               </Col>
               <Col span={5} style={{ padding: "10px" }}>
                 <Badge count={5} style={{ color: "white" }}>
-                <PopoverWrapper title={"Messages"} content={"Loading ..."}>
-                  <FiMail
-                    className="headerIcon"
-                    style={{
-                      width: "24px",
-                      height: "24px",
-                    }}
-                  />
+                  <PopoverWrapper title={"Messages"} content={"Loading ..."}>
+                    <FiMail
+                      className="headerIcon"
+                      style={{
+                        width: "24px",
+                        height: "24px"
+                      }}
+                    />
                   </PopoverWrapper>
                 </Badge>
               </Col>
               <Col span={6}>
                 <Badge dot style={{ color: "white" }}>
-                <PopoverWrapper title={"Account"} content={"... pending"}>
-                  <Avatar
-                    shape="circle"
-                    size="40px"
-                    icon="user"
-                    style={{ color: "white" }}
-                  />
+                  <PopoverWrapper title={"Account"} content={"... pending"}>
+                    <Avatar
+                      shape="circle"
+                      size="40px"
+                      icon="user"
+                      style={{ color: "white" }}
+                    />
                   </PopoverWrapper>
                 </Badge>
               </Col>
               <Col span={8}>
-              {(menuShow.rightMenu===true)?<Button
-                  type="primary"
-                  onClick={() => this.props.toggleCollapsed("collapsedRight")}
-                  style={{ zIndex: 10 }}
-                >
-                  <Icon
-                    type={
-                      this.props.state.collapsedRight
-                        ? "menu-fold"
-                        : "menu-unfold"
-                    }
-                  />
-                </Button>:null}
+                {menuShow.rightMenu === true ? (
+                  <Button
+                    type="primary"
+                    onClick={() => this.props.toggleCollapsed("collapsedRight")}
+                    style={{ zIndex: 10 }}
+                  >
+                    <Icon
+                      type={
+                        this.props.state.collapsedRight
+                          ? "menu-fold"
+                          : "menu-unfold"
+                      }
+                    />
+                  </Button>
+                ) : null}
               </Col>
             </Row>
           </Col>
@@ -127,4 +150,4 @@ class HeaderContent extends React.Component {
   }
 }
 
-export default connect(null)(HeaderContent)
+export default connect(null)(HeaderContent);

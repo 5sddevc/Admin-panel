@@ -8,7 +8,7 @@ const contentTest = (
   </div>
 );
 const PopoverWrapper = (props) => {
-    console.log(props);
+    // console.log(props);
   return(
     <Popover placement="bottomRight" {...props} trigger="click">
   </Popover>
