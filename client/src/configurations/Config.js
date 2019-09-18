@@ -7,5 +7,11 @@ const HeaderLogo = () => {
   );
 };
 
-export { HeaderLogo };
+const menuShow = {
+  rightMenu : true,
+  leftMenu: true
+};
+export { HeaderLogo, menuShow };
+
+
 

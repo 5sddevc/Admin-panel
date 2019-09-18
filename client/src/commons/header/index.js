@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { Menu, Icon, Button } from "antd";
+import {menuShow} from "../../configurations/Config";
 import { connect } from "react-redux";
 import Switch from "../../components/switch";
 import { toggleMode } from "../../actions/App"
@@ -26,7 +27,7 @@ class HeaderContent extends React.Component {
             </div>
           </Col>
           <Col span={2}>
-            <Button
+          {(menuShow.leftMenu===true)? <Button
               type="primary"
               onClick={() => this.props.toggleCollapsed("collapsedLeft")}
               style={{ marginBottom: 16, zIndex: 10 }}
@@ -36,7 +37,7 @@ class HeaderContent extends React.Component {
                   this.props.state.collapsedLeft ? "menu-unfold" : "menu-fold"
                 }
               />
-            </Button>
+            </Button> :null}
           </Col>
           <Col span={14}>
             <Row type="flex" justify="space-between">
@@ -100,7 +101,7 @@ class HeaderContent extends React.Component {
                 </Badge>
               </Col>
               <Col span={8}>
-                <Button
+              {(menuShow.rightMenu===true)?<Button
                   type="primary"
                   onClick={() => this.props.toggleCollapsed("collapsedRight")}
                   style={{ zIndex: 10 }}
@@ -112,7 +113,7 @@ class HeaderContent extends React.Component {
                         : "menu-unfold"
                     }
                   />
-                </Button>
+                </Button>:null}
               </Col>
             </Row>
           </Col>
