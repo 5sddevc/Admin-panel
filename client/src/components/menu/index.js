@@ -13,6 +13,11 @@ const StyledMenu = styled(Menu)`
 
   && a, && li {
     color: ${props => props.theme[props.theme.mode].textColor.primary};
+    z-index: 100;
+  }
+
+  && .ant-menu-item:not(.ant-menu-item-selected) {
+    border: none;
   }
   
   ${props => props.mode === "horizontal" ? null : css`

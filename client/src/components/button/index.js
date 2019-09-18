@@ -5,7 +5,7 @@ import {Button} from 'antd';
 
 const StyledButton = styled(Button)`
    //color: ${props => props.theme[props.theme.mode].primary.main};
-   font-weight: bold;
+   //font-weight: bold;
 `;
 
 const ButtonWrapper = (props)=>{

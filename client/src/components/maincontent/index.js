@@ -10,7 +10,7 @@ const StyledContent = styled(Content)`
 
   padding: 35px;
 
-  height: calc(100vh - 64px - 69px)
+  height: calc(100vh - 64px - 38px);
 //   font-weight: bold;
 //   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
 `;
