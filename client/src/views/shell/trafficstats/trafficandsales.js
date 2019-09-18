@@ -1,54 +1,69 @@
 import React from "react";
-import reqwest from 'reqwest';
+import reqwest from "reqwest";
 import { avatarIcons } from "../../../configurations/Config";
-import { Row, Col, Icon, Divider, Pagination, Progress, Popconfirm } from "antd";
+import {
+  Row,
+  Col,
+  Icon,
+  Divider,
+  Pagination,
+  Progress,
+  Popconfirm
+} from "antd";
 import CardWrapper from "../../../commons/card/index";
 import ProgressWrapper from "../../../components/progress/index";
 import AvatarWrapper from "../../../components/avatar/index";
 import TableWrapper from "../../../components/table/index";
 import { userDetails, usersData } from "../../../mocks/users";
 
-
-
 class TrafficAndSales extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.columns = [
       {
-        title: 'Name',
-        dataIndex: 'name',
+        title: "Name",
+        dataIndex: "name",
         sorter: true,
         render: name => `${name.first} ${name.last}`,
-        width: '20%',
+        width: "20%"
       },
       {
-        title: 'Gender',
-        dataIndex: 'gender',
-        filters: [{ text: 'Male', value: 'male' }, { text: 'Female', value: 'female' }],
-        width: '20%',
+        title: "Gender",
+        dataIndex: "gender",
+        filters: [
+          { text: "Male", value: "male" },
+          { text: "Female", value: "female" }
+        ],
+        width: "20%"
       },
       {
-        title: 'Email',
-        dataIndex: 'email',
+        title: "Email",
+        dataIndex: "email"
       },
       {
-        title: 'Action',
-        dataIndex: 'operation',
+        title: "Action",
+        dataIndex: "operation",
         render: (text, record) =>
           this.state.data.length >= 1 ? (
-            <Popconfirm title="Sure to delete?" onConfirm={() => {console.log("record", record.id.value); this.handleDelete(record.id.value)}}>
+            <Popconfirm
+              title="Do you want to delete this user?"
+              onConfirm={() => {
+                console.log("record", record.id.value);
+                this.handleDelete(record.id.value);
+              }}
+            >
               <a>Delete</a>
             </Popconfirm>
-          ) : null,
-      },
+          ) : null
+      }
     ];
     this.state = {
       data: [],
       pagination: {},
-      loading: false,
+      loading: false
     };
   }
-  
+
   componentDidMount() {
     this.fetch();
   }
@@ -57,14 +72,14 @@ class TrafficAndSales extends React.Component {
     const pager = { ...this.state.pagination };
     pager.current = pagination.current;
     this.setState({
-      pagination: pager,
+      pagination: pager
     });
     this.fetch({
       results: pagination.pageSize,
       page: pagination.current,
       sortField: sorter.field,
       sortOrder: sorter.order,
-      ...filters,
+      ...filters
     });
   };
   handleDelete = value => {
@@ -73,16 +88,16 @@ class TrafficAndSales extends React.Component {
   };
 
   fetch = (params = {}) => {
-    console.log('params:', params);
+    console.log("params:", params);
     this.setState({ loading: true });
     reqwest({
-      url: 'https://randomuser.me/api',
-      method: 'get',
+      url: "https://randomuser.me/api",
+      method: "get",
       data: {
         results: 10,
-        ...params,
+        ...params
       },
-      type: 'json',
+      type: "json"
     }).then(data => {
       const pagination = { ...this.state.pagination };
       // Read total count from server
@@ -91,19 +106,20 @@ class TrafficAndSales extends React.Component {
       this.setState({
         loading: false,
         data: data.results,
-        pagination,
+        pagination
       });
     });
   };
-  render(){
-    console.log("Table State",this.state);
+  render() {
+    console.log("Table State", this.state);
     const columns = this.columns.map(col => {
-        return col;
+      return col;
     });
     return (
       <React.Fragment>
         <Col span={24}>
-          <CardWrapper className="mainContentDiv"
+          <CardWrapper
+            className="mainContentDiv"
             type="inner"
             title={"Traffic & Sales"}
             bordered={true}
@@ -160,7 +176,7 @@ class TrafficAndSales extends React.Component {
                       <ProgressWrapper percent={80} strokeColor="#09d609" />
                     </Col>
                     <Col span={24}>
-                      <ProgressWrapper percent={90} />
+                      <ProgressWrapper percent={20} />
                     </Col>
                   </Col>
                 </Col>
@@ -171,7 +187,7 @@ class TrafficAndSales extends React.Component {
                       <ProgressWrapper percent={30} strokeColor="#09d609" />
                     </Col>
                     <Col span={24}>
-                      <ProgressWrapper percent={20} />
+                      <ProgressWrapper percent={70} />
                     </Col>
                   </Col>
                 </Col>
@@ -182,7 +198,7 @@ class TrafficAndSales extends React.Component {
                       <ProgressWrapper percent={70} strokeColor="#09d609" />
                     </Col>
                     <Col span={24}>
-                      <ProgressWrapper percent={90} />
+                      <ProgressWrapper percent={30} />
                     </Col>
                   </Col>
                 </Col>
@@ -190,10 +206,10 @@ class TrafficAndSales extends React.Component {
                   <Col span={4}>Friday</Col>
                   <Col span={20}>
                     <Col span={24}>
-                      <ProgressWrapper percent={50} strokeColor="#09d609" />
+                      <ProgressWrapper percent={55} strokeColor="#09d609" />
                     </Col>
                     <Col span={24}>
-                      <ProgressWrapper percent={40} />
+                      <ProgressWrapper percent={45} />
                     </Col>
                   </Col>
                 </Col>
@@ -204,7 +220,7 @@ class TrafficAndSales extends React.Component {
                       <ProgressWrapper percent={54} strokeColor="#09d609" />
                     </Col>
                     <Col span={24}>
-                      <ProgressWrapper percent={68} />
+                      <ProgressWrapper percent={46} />
                     </Col>
                   </Col>
                 </Col>
@@ -215,7 +231,7 @@ class TrafficAndSales extends React.Component {
                       <ProgressWrapper percent={34} strokeColor="#09d609" />
                     </Col>
                     <Col span={24}>
-                      <ProgressWrapper percent={98} />
+                      <ProgressWrapper percent={66} />
                     </Col>
                   </Col>
                 </Col>
@@ -293,7 +309,7 @@ class TrafficAndSales extends React.Component {
                   </Col>
                 </Col>
               </Col>
-              
+
               <Col className="innerContentSpacing" span={24}>
                 <TableWrapper
                   //bordered={true}
@@ -305,13 +321,11 @@ class TrafficAndSales extends React.Component {
                   onChange={this.handleTableChange}
                 />
               </Col>
-              
             </Row>
           </CardWrapper>
         </Col>
       </React.Fragment>
     );
   }
-  
-};
+}
 export default TrafficAndSales;
