@@ -34,7 +34,7 @@ class Shell extends React.Component {
   };
 
   render() {
-    console.log("Props shell",this.props);
+    // console.log("Props shell",this.props);
     return (
       <div className="App">
         <Layout>
