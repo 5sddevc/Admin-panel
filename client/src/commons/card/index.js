@@ -9,7 +9,7 @@ const StyledCard = styled(Card)`
   border: 1px solid ${props => props.theme[props.theme.mode].border};
   transition: none;
   
-  && * {
+  * {
     color: ${props => props.theme[props.theme.mode].textColor.primary};
     transition: none;
   }

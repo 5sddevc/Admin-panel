@@ -45,7 +45,7 @@ class HeaderContent extends React.Component {
                 <MenuWrapper
                   mode="horizontal"
                   defaultSelectedKeys={["1"]}
-                  style={{ lineHeight: "64px" }}
+                  style={{ lineHeight: "62px" }}
                 >
                   <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
                   <Menu.Item key="2" ><Link to="/users">Users</Link></Menu.Item>
