@@ -1,5 +1,7 @@
 import React from "react";
 import Logo from "../assets/images/textlogo.svg";
+import MaleAvatar from "../assets/images/maleavatar.png";
+import FemaleAvatar from "../assets/images/femaleavatar.svg";
 
 const HeaderLogo = () => {
   return (
@@ -11,7 +13,11 @@ const menuShow = {
   rightMenu : true,
   leftMenu: true
 };
-export { HeaderLogo, menuShow };
+const avatarIcons = {
+  male: MaleAvatar,
+  female: FemaleAvatar
+}
+export { HeaderLogo, menuShow, avatarIcons };
 
 
 

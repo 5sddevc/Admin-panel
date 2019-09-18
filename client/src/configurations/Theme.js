@@ -41,7 +41,8 @@ export const theme = {
             "lighter": 300,
         },
         "border": "#c8ced3",
-        "spacing": 35
+        "spacing": 35,
+        "ratio": 2
 
     },
     "dark": {
@@ -79,7 +80,8 @@ export const theme = {
             "hint": "rgba(12, 19, 48, 1)"
         },
         "border": "#23282c",
-        "spacing": 35
+        "spacing": 35,
+        "ratio": 2
     }
 };
 

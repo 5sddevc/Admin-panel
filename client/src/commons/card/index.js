@@ -14,7 +14,11 @@ const StyledCard = styled(Card)`
     transition: none;
   }
 
-  .mainContentDivs:not(:first-child) & {
+  .mainContentDiv:not(:first-child) & {
+    margin-top: ${props => props.theme[props.theme.mode].spacing}px;
+  }
+
+  .innerContentSpacing {
     margin-top: ${props => props.theme[props.theme.mode].spacing}px;
   }
 

@@ -45,7 +45,7 @@ class HeaderContent extends React.Component {
                 <MenuWrapper
                   mode="horizontal"
                   defaultSelectedKeys={["1"]}
-                  style={{ lineHeight: "62px" }}
+                  style={{ lineHeight: "61px" }}
                 >
                   <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
                   <Menu.Item key="2" ><Link to="/users">Users</Link></Menu.Item>
@@ -57,7 +57,7 @@ class HeaderContent extends React.Component {
 
               <Col>
                 <span>
-                  Toggle mode
+                  Switch Theme
                   <Switch onChange={() => {this.props.dispatch(toggleMode())}} style={{ marginLeft: 10}} defaultChecked={true}></Switch>
                 </span>
               </Col>

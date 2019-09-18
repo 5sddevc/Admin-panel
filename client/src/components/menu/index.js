@@ -14,6 +14,7 @@ const StyledMenu = styled(Menu)`
   && a, && li {
     color: ${props => props.theme[props.theme.mode].textColor.primary};
     z-index: 100;
+    vertical-align: unset;
   }
 
   && .ant-menu-item:not(.ant-menu-item-selected) {

@@ -8,7 +8,7 @@ import RenderChart from "../../Chart";
 const TrafficStatsGraphic = () => {
   return (
     <React.Fragment>
-      <Col className="mainContentDivs" span={24}>
+      <Col className="mainContentDiv" span={24}>
         <CardWrapper
           type="inner"
           title={"Traffic Statictics"}
@@ -16,7 +16,7 @@ const TrafficStatsGraphic = () => {
           headStyle={{ display: "flex" }}
         >
           <Col span={24}><RenderChart/></Col>
-          <Col span={6}>
+          <Col className="innerContentSpacing" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="Daily unique Visitors"
@@ -28,7 +28,7 @@ const TrafficStatsGraphic = () => {
               />
             </CardWrapper>
           </Col>
-          <Col span={6}>
+          <Col className="innerContentSpacing" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="Page Views"
@@ -37,7 +37,7 @@ const TrafficStatsGraphic = () => {
               />
             </CardWrapper>
           </Col>
-          <Col span={6}>
+          <Col className="innerContentSpacing" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="New Users"
@@ -46,7 +46,7 @@ const TrafficStatsGraphic = () => {
               />
             </CardWrapper>
           </Col>
-          <Col span={6}>
+          <Col className="innerContentSpacing" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="Bounce Rate"
