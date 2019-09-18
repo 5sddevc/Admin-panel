@@ -33,7 +33,14 @@ class Users extends React.Component {
                     type="edit"
                     key="edit"
                   />,
-                  <Icon type="ellipsis" key="ellipsis" />
+                  <Icon 
+                  onClick={() =>
+                    this.props.openModal(
+                      "User Info",
+                      <p>User info option loads data from api... currently no api available to provide data to show</p>
+                    )
+                  }
+                  type="ellipsis" key="ellipsis" />
                 ]}
               >
                 <UserCard title={"test title"} description={"Description"} />
@@ -52,7 +59,14 @@ class Users extends React.Component {
                     type="edit"
                     key="edit"
                   />,
-                  <Icon type="ellipsis" key="ellipsis" />
+                  <Icon 
+                  onClick={() =>
+                    this.props.openModal(
+                      "User Info",
+                      <p>User info option loads data from api... currently no api available to provide data to show</p>
+                    )
+                  }
+                  type="ellipsis" key="ellipsis" />
                 ]}
               >
                 <UserCard title={"test title"} description={"Description"} />
@@ -71,7 +85,14 @@ class Users extends React.Component {
                     type="edit"
                     key="edit"
                   />,
-                  <Icon type="ellipsis" key="ellipsis" />
+                  <Icon 
+                  onClick={() =>
+                    this.props.openModal(
+                      "User Info",
+                      <p>User info option loads data from api... currently no api available to provide data to show</p>
+                    )
+                  }
+                  type="ellipsis" key="ellipsis" />
                 ]}
               >
                 <UserCard title={"test title"} description={"Description"} />
@@ -90,7 +111,14 @@ class Users extends React.Component {
                     type="edit"
                     key="edit"
                   />,
-                  <Icon type="ellipsis" key="ellipsis" />
+                  <Icon 
+                  onClick={() =>
+                    this.props.openModal(
+                      "User Info",
+                      <p>User info option loads data from api... currently no api available to provide data to show</p>
+                    )
+                  }
+                  type="ellipsis" key="ellipsis" />
                 ]}
               >
                 <UserCard title={"test title"} description={"Description"} />
@@ -109,7 +137,14 @@ class Users extends React.Component {
                     type="edit"
                     key="edit"
                   />,
-                  <Icon type="ellipsis" key="ellipsis" />
+                  <Icon 
+                  onClick={() =>
+                    this.props.openModal(
+                      "User Info",
+                      <p>User info option loads data from api... currently no api available to provide data to show</p>
+                    )
+                  }
+                  type="ellipsis" key="ellipsis" />
                 ]}
               >
                 <UserCard title={"test title"} description={"Description"} />
@@ -128,7 +163,14 @@ class Users extends React.Component {
                     type="edit"
                     key="edit"
                   />,
-                  <Icon type="ellipsis" key="ellipsis" />
+                  <Icon 
+                  onClick={() =>
+                    this.props.openModal(
+                      "User Info",
+                      <p>User info option loads data from api... currently no api available to provide data to show</p>
+                    )
+                  }
+                  type="ellipsis" key="ellipsis" />
                 ]}
               >
                 <UserCard title={"test title"} description={"Description"} />
