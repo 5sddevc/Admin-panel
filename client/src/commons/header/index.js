@@ -57,7 +57,7 @@ class HeaderContent extends React.Component {
 
               <Col>
                 <span>
-                  Toggle mode
+                  Switch Theme
                   <Switch onChange={() => {this.props.dispatch(toggleMode())}} style={{ marginLeft: 10}} defaultChecked={true}></Switch>
                 </span>
               </Col>
