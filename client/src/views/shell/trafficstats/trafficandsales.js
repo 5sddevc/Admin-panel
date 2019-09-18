@@ -7,7 +7,7 @@ import AvatarWrapper from "../../../components/avatar/index";
 const TrafficAndSales = props => {
   return (
     <React.Fragment>
-      <Col span={24}>
+      <Col className="mainContentDivs" span={24}>
         <CardWrapper
           type="inner"
           title={"Traffic & Sales"}

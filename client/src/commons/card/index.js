@@ -14,6 +14,10 @@ const StyledCard = styled(Card)`
     transition: none;
   }
 
+  .mainContentDivs:not(:first-child) & {
+    margin-top: ${props => props.theme[props.theme.mode].spacing}px;
+  }
+
   && .ant-card-head {
     background: ${props => props.theme[props.theme.mode].background.tertiary};
     border-bottom: 2px solid ${props => props.theme[props.theme.mode].border};

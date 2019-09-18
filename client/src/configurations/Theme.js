@@ -13,7 +13,7 @@ export const theme = {
         },
         "primary": {
             "light": "rgba(255, 255, 255, 0)",
-            "main": "#c11d1d",
+            "main": "#1890ff",
             "dark": "#303f9f",
             "contrastText": "rgba(255, 255, 255, 1)",
         },
@@ -40,7 +40,8 @@ export const theme = {
             "normal": 400,
             "lighter": 300,
         },
-        "border": "#c8ced3"
+        "border": "#c8ced3",
+        "spacing": 35
 
     },
     "dark": {
@@ -55,7 +56,7 @@ export const theme = {
         },
         "primary": {
             "light": "rgba(255, 255, 255, 0)",
-            "main": "#c11d1d",
+            "main": "#1890ff",
             "dark": "#303f9f",
             "contrastText": "rgba(255, 255, 255, 1)",
         },
@@ -77,7 +78,8 @@ export const theme = {
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(12, 19, 48, 1)"
         },
-        "border": "#23282c"
+        "border": "#23282c",
+        "spacing": 35
     }
 };
 
