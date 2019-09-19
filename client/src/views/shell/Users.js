@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { store } from "../../ConfigureStore";
+import { Row, Col } from "antd";
 import { openModal } from "../../actions/Modal";
-import { Row, Col, Icon } from "antd";
 import CardWrapper from "../../commons/card/index";
 import UserCard from "../../components/cards/User";
+import Icon from "../../components/Icon/index";
 import { usersData } from "../../mocks/users";
+
 
 const dataUsers = usersData();
 class Users extends React.Component {
@@ -24,7 +26,7 @@ class Users extends React.Component {
         >
           <Col span={24}>
             {datatomap.map( item =>
-             <Col span={6}>
+             <Col span={6} key={item.username}>
              <CardWrapper className="mainContentDiv"
                actions={[
                  <Icon

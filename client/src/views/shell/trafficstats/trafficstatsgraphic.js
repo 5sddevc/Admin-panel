@@ -1,9 +1,10 @@
 import React from "react";
-import { Row, Col, Icon } from "antd";
+import { Row, Col } from "antd";
 import CardWrapper from "../../../commons/card/index";
 import StatisticWrapper from "../../../components/cards/Statistics";
 import trafficData from "../../../mocks/trafficstats";
-import RenderChart from "../../Chart";
+import RenderChart from "./Chart";
+import Icon from "../../../components/Icon/index";
 
 const TrafficStatsGraphic = () => {
   return (

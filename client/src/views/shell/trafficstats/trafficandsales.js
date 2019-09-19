@@ -1,20 +1,19 @@
 import React from "react";
 import reqwest from "reqwest";
-import { avatarIcons } from "../../../configurations/Config";
 import {
   Row,
   Col,
-  Icon,
   Divider,
-  Pagination,
-  Progress,
-  Popconfirm
+  Popconfirm,
+  // Pagination,
+  // Progress,
+  // Icon,
 } from "antd";
 import CardWrapper from "../../../commons/card/index";
 import ProgressWrapper from "../../../components/progress/index";
-import AvatarWrapper from "../../../components/avatar/index";
 import TableWrapper from "../../../components/table/index";
-import { userDetails, usersData } from "../../../mocks/users";
+// import { userDetails, usersData } from "../../../mocks/users";
+// import AvatarWrapper from "../../../components/avatar/index";
 
 class TrafficAndSales extends React.Component {
   constructor(props) {
