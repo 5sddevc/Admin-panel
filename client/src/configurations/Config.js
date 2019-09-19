@@ -8,7 +8,7 @@ const HeaderLogo = () => {
 };
 
 const menuShow = {
-  rightMenu: true,
+  rightMenu: false,
   leftMenu: true
 };
 const avatarIcons = {
