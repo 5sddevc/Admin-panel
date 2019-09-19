@@ -25,7 +25,7 @@ const StyledCard = styled(Card)`
     margin-top: ${props => props.theme[props.theme.mode].spacing}px;
   }
 
-  && .innerContentSpacing & .ant-card-body{
+  && .innerSmallCard & .ant-card-body {
     background: ${props => props.theme[props.theme.mode].background.tertiary};
   }
 
@@ -37,6 +37,15 @@ const StyledCard = styled(Card)`
 
   .ant-card-body {
     background: ${props => props.theme[props.theme.mode].background.primary};
+  }
+
+  .ant-card-actions {
+    background: ${props => props.theme[props.theme.mode].background.tertiary};
+    border-top: 1px solid ${props => props.theme[props.theme.mode].border};
+  }
+
+  .ant-card-actions > li:not(:last-child) {
+    border-right: 1px solid ${props => props.theme[props.theme.mode].border};
   }
 //   font-weight: bold;
 //   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);

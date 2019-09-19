@@ -27,6 +27,10 @@ const StyledTable = styled(Table)`
     background: ${props => props.theme[props.theme.mode].primary.light};
   }
 
+  && th.ant-table-column-sort:nth-child(n), th.ant-table-column-has-filters:nth-child(n) i:active:nth-child(n) {
+    background: ${props => props.theme[props.theme.mode].primary.light};
+  }
+
   && tbody tr:hover:nth-child(n) td {
     background: ${props => props.theme[props.theme.mode].primary.light};
   }
@@ -37,6 +41,7 @@ const StyledTable = styled(Table)`
 
   && .ant-pagination li a {
     border-radius: 4px;
+    transition: background 0s;
   }
 
   && .ant-pagination li.ant-pagination-item:not(.ant-pagination-item-active) a {

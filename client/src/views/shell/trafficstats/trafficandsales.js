@@ -266,19 +266,21 @@ class TrafficAndSales extends React.Component {
                 <Divider />
                 <Col span={24}>
                   {/* <Col span={4}><AvatarWrapper src={avatarIcons.male}/></Col> */}
-                  <Col span={4}>Male : </Col>
+                  <Col span={4}>Male </Col>
                   <Col span={20}>
                     <ProgressWrapper percent={61} strokeColor="#ffc107" />
                   </Col>
                 </Col>
                 <Col span={24}>
                   {/* <Col span={4}><AvatarWrapper src={avatarIcons.female}/></Col> */}
-                  <Col span={4}>Female : </Col>
+                  <Col span={4}>Female </Col>
                   <Col span={20}>
                     <ProgressWrapper percent={39} strokeColor="#ffc107" />
                   </Col>
                 </Col>
-                <Divider type="vertical" />
+                <br />
+                <br />
+                <br />
                 <Divider />
                 <Col span={24}>
                   {/* <Col span={4}><AvatarWrapper src={avatarIcons.male}/></Col> */}

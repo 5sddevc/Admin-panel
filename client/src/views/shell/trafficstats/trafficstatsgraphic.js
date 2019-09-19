@@ -16,7 +16,7 @@ const TrafficStatsGraphic = () => {
           headStyle={{ display: "flex" }}
         >
           <Col span={24}><RenderChart/></Col>
-          <Col className="innerContentSpacing" span={6}>
+          <Col className="innerContentSpacing innerSmallCard" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="Daily unique Visitors"
@@ -28,7 +28,7 @@ const TrafficStatsGraphic = () => {
               />
             </CardWrapper>
           </Col>
-          <Col className="innerContentSpacing" span={6}>
+          <Col className="innerContentSpacing innerSmallCard" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="Page Views"
@@ -37,7 +37,7 @@ const TrafficStatsGraphic = () => {
               />
             </CardWrapper>
           </Col>
-          <Col className="innerContentSpacing" span={6}>
+          <Col className="innerContentSpacing innerSmallCard" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="New Users"
@@ -46,7 +46,7 @@ const TrafficStatsGraphic = () => {
               />
             </CardWrapper>
           </Col>
-          <Col className="innerContentSpacing" span={6}>
+          <Col className="innerContentSpacing innerSmallCard" span={6}>
             <CardWrapper>
               <StatisticWrapper
                 title="Bounce Rate"
