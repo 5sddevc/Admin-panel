@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, Icon, Button } from "antd";
+import { Menu } from "antd";
 import { menuShow } from "../../configurations/Config";
 import { connect } from "react-redux";
 import Switch from "../../components/switch";
@@ -12,11 +12,56 @@ import PopoverWrapper from "../popover/index";
 import MenuWrapper from "../../components/menu";
 import Badge from "../../components/badge/index";
 import Avatar from "../../components/avatar/index";
+import Icon from "../../components/Icon/index";
+import Button from "../../components/button/index";
 
 class HeaderContent extends React.Component {
   constructor(props) {
     super(props);
   }
+  notifications = () => {
+    return (
+      <React.Fragment>
+        <Row
+          type="flex"
+          gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }}
+          justify="space-between"
+          style={{width:"200px"}}
+        >
+         <Col span={24}>
+         <Col span={4}><Icon type={"user-add"}></Icon></Col>
+         <Col span={20}><Link to ="/"><p>New Users</p></Link></Col>
+         </Col>
+         <Col span={24}>
+         <Col span={4}><Icon type={"user-delete"}></Icon></Col>
+         <Col span={20}><Link to ="/"><p>Users Deleted</p></Link></Col>
+         </Col>
+         <Col span={24}>
+         <Col span={4}><Icon type={"line-chart"}></Icon></Col>
+         <Col span={20}><Link to ="/"><p>Sales Report</p></Link></Col>
+         </Col>
+         <Col span={24}>
+         <Col span={4}><Icon type={"idcard"}></Icon></Col>
+         <Col span={20}><Link to ="/"><p>New Client</p></Link></Col>
+         </Col>
+        </Row>
+      </React.Fragment>
+    );
+  };
+  messages = () => {
+    return (
+      <React.Fragment>
+        <p>Messages Loading...</p>
+      </React.Fragment>
+    );
+  };
+  account = () => {
+    return (
+      <React.Fragment>
+        <p>Account Loading...</p>
+      </React.Fragment>
+    );
+  };
   render() {
     return (
       <div>
@@ -79,59 +124,64 @@ class HeaderContent extends React.Component {
           </Col>
 
           <Col style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }} span={4}>
-            <Badge count={10} style={{ color: "white" }}>
-              <PopoverWrapper
-                title={"Notifications"}
-                content={"Loading ..."}
-              >
-                <FiBell
-                  className="headerIcon"
-                  style={{
-                    width: "24px",
-                    height: "24px"
-                  }}
-                />
-              </PopoverWrapper>
-            </Badge>
-
-            <Badge count={5} style={{ color: "white" }}>
-              <PopoverWrapper title={"Messages"} content={"Loading ..."}>
-                <FiMail
-                  className="headerIcon"
-                  style={{
-                    width: "24px",
-                    height: "24px"
-                  }}
-                />
-              </PopoverWrapper>
-            </Badge>
-
-            <Badge dot style={{ color: "white" }}>
-              <PopoverWrapper title={"Account"} content={"... pending"}>
-                <Avatar
-                  shape="circle"
-                  size="40px"
-                  icon="user"
-                  style={{ color: "white" }}
-                />
-              </PopoverWrapper>
-            </Badge>
-
-            {menuShow.rightMenu === true ? (
-              <Button
-                type="primary"
-                onClick={() => this.props.toggleCollapsed("collapsedRight")}
-                style={{ zIndex: 10 }}
-              >
-                <Icon
-                  type={
-                    this.props.state.collapsedRight
-                      ? "menu-fold"
-                      : "menu-unfold"
-                  }
-                />
-              </Button>
-            ) : null}
+              
+                <Badge count={10} style={{ color: "white" }}>
+                  <PopoverWrapper
+                    title={"Notifications"}
+                    content={this.notifications()}
+                  >
+                    <FiBell
+                      className="headerIcon"
+                      style={{
+                        width: "24px",
+                        height: "24px"
+                      }}
+                    />
+                  </PopoverWrapper>
+                </Badge>
+              
+              
+                <Badge count={5} style={{ color: "white" }}>
+                  <PopoverWrapper title={"Messages"} content={this.messages()}>
+                    <FiMail
+                      className="headerIcon"
+                      style={{
+                        width: "24px",
+                        height: "24px"
+                      }}
+                    />
+                  </PopoverWrapper>
+                </Badge>
+              
+             
+                <Badge dot style={{ color: "white" }}>
+                  <PopoverWrapper title={"Account"} content={this.account()}>
+                    <Avatar
+                      shape="circle"
+                      size="40px"
+                      icon="user"
+                      style={{ color: "white" }}
+                    />
+                  </PopoverWrapper>
+                </Badge>
+              
+              
+                {menuShow.rightMenu === true ? (
+                  <Button
+                    type="primary"
+                    onClick={() => this.props.toggleCollapsed("collapsedRight")}
+                    style={{ zIndex: 10 }}
+                  >
+                    <Icon
+                      type={
+                        this.props.state.collapsedRight
+                          ? "menu-fold"
+                          : "menu-unfold"
+                      }
+                    />
+                  </Button>
+                ) : null}
+              
           </Col>
         </Row>
       </div>

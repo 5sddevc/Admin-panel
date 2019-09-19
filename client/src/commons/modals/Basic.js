@@ -13,6 +13,8 @@ const BasicModal = (props) => {
     visible={props.visible}
     onOk={() => props.dispatch(closeModal())}
     onCancel={() => props.dispatch(closeModal())}
+    okText={props.okText}
+    cancelText={props.cancelText}
     >
       {props.content}
     </Modal>
