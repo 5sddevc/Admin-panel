@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { Layout, Row, Col, Radio, TimePicker, MonthPicker  } from "antd";
+import { Layout, Row, Col, Radio, TimePicker, MonthPicker } from "antd";
 import Input from "../input/index";
 import TextArea from "../input/TextArea";
 import Button from "../button/index";
@@ -10,14 +10,15 @@ import Icon from "../Icon/index";
 import Select from "../input/Select";
 import Option from "../input/SelectOptions";
 import DatePicker from "../datepickers/DatePicker";
+import Switch from "../switch/index";
 import { loginValidations } from "../../configurations/Schemas";
-
 
 class GeneralForm extends React.Component {
   state = {
     username: "",
     password: "",
     description: "",
+    switch: false,
     select: "Select a person",
     radio: "",
     date: moment("2019-09-24 00:00:00", "YYYY-MM-DD HH:mm:ss"),
@@ -71,6 +72,14 @@ class GeneralForm extends React.Component {
                   },
                   {
                     span: 24,
+                    name: "switch",
+                    value: this.state.switch,
+                    handleChanged: this.handleChanged,
+                    Type: Switch,
+                    addonBefore: <Icon type="lock" />
+                  },
+                  {
+                    span: 24,
                     name: "select",
                     value: this.state.select,
                     handleChanged: this.handleChanged,
@@ -108,7 +117,6 @@ class GeneralForm extends React.Component {
                     },
                     addonBefore: <Icon type="lock" />
                   },
-                  //<DatePicker
                   {
                     span: 24,
                     name: "radio",

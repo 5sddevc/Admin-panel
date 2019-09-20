@@ -7,6 +7,7 @@ import Select from "../input/Select";
 import Button from "../button/index";
 import Input from "../input/index";
 import TextArea from "../input/TextArea";
+import Switch from "../switch/index";
 
 const loginApiCall = values => {
   console.log(values);
@@ -85,7 +86,7 @@ const RootForm = props => {
                             }
                           };
                           handleChange(obj);
-                        } else if (val.Type == Select) {
+                        } else if (val.Type == Select || val.Type == Switch) {
                           let obj = {
                             target: {
                               name: val.name,
