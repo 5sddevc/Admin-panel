@@ -1,7 +1,8 @@
 import React from "react";
 import moment from "moment";
 import { Formik, Form } from "formik";
-import { Row, Col, Radio, TimePicker, DatePicker, MonthPicker } from "antd";
+import { Row, Col, Radio, TimePicker, MonthPicker } from "antd";
+import DatePicker from "../datepickers/DatePicker";
 import Select from "../input/Select";
 import Button from "../button/index";
 import Input from "../input/index";

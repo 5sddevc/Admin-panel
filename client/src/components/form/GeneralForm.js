@@ -1,17 +1,17 @@
 import React from "react";
 import moment from "moment";
-import { Layout, Row, Col } from "antd";
+import { Layout, Row, Col, Radio, TimePicker, MonthPicker  } from "antd";
 import Input from "../input/index";
 import TextArea from "../input/TextArea";
 import Button from "../button/index";
 import RootForm from "../form/index";
-import { loginValidations } from "../../configurations/Schemas";
 import Card from "../card/index";
 import Icon from "../Icon/index";
 import Select from "../input/Select";
 import Option from "../input/SelectOptions";
-import { Radio, TimePicker, DatePicker, MonthPicker } from "antd";
-// const {TextArea} = Input;
+import DatePicker from "../datepickers/DatePicker";
+import { loginValidations } from "../../configurations/Schemas";
+
 
 class GeneralForm extends React.Component {
   state = {
