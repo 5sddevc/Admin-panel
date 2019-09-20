@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 
 const style = css`
-//Should make global variables in theme for row height, box-shadows, borders and others
+//Should make global variables in theme for row height, box-shadows, borders and others, also have to take into account sorting through simple props
 & {
     width: 100%;
     overflow: auto;
@@ -19,10 +19,63 @@ const style = css`
 .rt-thead {
     min-width: 500px !important;
     font-weight: bold;
+    font-size: 1.1rem;
     position: relative;
     /* z-index: 100; */
-    box-shadow: 0 2px 32px -10px rgba(0,0,0,0.15) !important;
+    box-shadow: none !important;
 }
+
+.rt-th {
+    word-break: initial !important;
+}
+
+//Row height must be read from theme
+.rt-tr {
+    background-color: white;
+    height: 65px;
+}
+
+.rt-th, .rt-td {
+    display: flex;
+    align-items: center;
+    white-space: normal !important;
+    word-break: break-all;
+    padding: 10px !important;
+    border: none !important;
+}
+
+
+
+
+//The following should be app-specific as well
+
+.rt-th:first-child, .rt-td:first-child {
+    flex: 30 0 auto !important;
+    justify-content: center;
+}
+
+// .rt-th:last-child, .rt-td:last-child {
+//     min-width: 150px !important;
+// }
+
+.rt-tbody {
+    min-width: 500px !important;
+    background-color: rgb(249, 249, 249, 1);
+}
+
+// .rt-tr-group {
+//     border: none !important;
+//     margin-bottom: 5px;
+// }
+
+.rt-tr-group:last-child {
+    margin-bottom: 0px;
+}
+
+
+
+
+
 
 .pagination-bottom {
     border-bottom-right-radius: 15px;
@@ -36,7 +89,7 @@ const style = css`
     border: none !important;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    //box-shadow: 0 0 15px 0 rgba(0,0,0,0) !important;
+    box-shadow: none !important;
     background-color: ${props => props.theme[props.theme.mode].background.primary};
 }
 
