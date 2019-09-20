@@ -4,7 +4,11 @@ import Input from "../components/input/index";
 import Button from "../components/button/index";
 import RootForm from "../commons/form/index";
 import { loginValidations } from "../configurations/Schemas";
-import { Layout, Card, Row, Col, Icon } from "antd";
+import { Layout, Row, Col } from "antd";
+import Card from "../commons/card/index";
+import Icon from "../components/Icon/index";
+import Select from "../components/input/Select";
+import Option from "../components/input/SelectOptions";
 
 class Login extends React.Component {
   state = {
@@ -45,6 +49,20 @@ class Login extends React.Component {
                     handleChanged: this.handleChanged,
                     placeholder: "Password",
                     Type: Input,
+                    addonBefore: <Icon type="lock" />
+                  },
+                  {
+                    span: 24,
+                    name: "password",
+                    value: this.state.password,
+                    handleChanged: this.handleChanged,
+                    placeholder: "Password",
+                    Type: Select,
+                    defaultValue: "jack",
+                    options: () => [
+                      <Option value="jack">Jack</Option>,
+                      <Option value="lucy">Lucy</Option>
+                    ],
                     addonBefore: <Icon type="lock" />
                   }
                 ]}

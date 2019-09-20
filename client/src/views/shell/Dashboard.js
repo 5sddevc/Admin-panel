@@ -1,7 +1,8 @@
 import React from "react";
-import { Row, Col, Icon } from "antd";
+import { Row} from "antd";
 import TrafficStatsGraphic from "./trafficstats/trafficstatsgraphic";
 import TrafficAndSales from "./trafficstats/trafficandsales";
+
 
 class Dashboard extends React.Component {
   renderFunction = () => {

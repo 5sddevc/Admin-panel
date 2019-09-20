@@ -11,6 +11,7 @@ const PopoverWrapper = (props) => {
     // console.log(props);
   return(
     <Popover placement="bottomRight" {...props} trigger="click">
+      {props.children}
   </Popover>
   );
 };

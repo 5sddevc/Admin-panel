@@ -1,19 +1,19 @@
 import React from "react";
 import reqwest from "reqwest";
-import { avatarIcons } from "../../../configurations/Config";
 import {
   Row,
   Col,
-  Icon,
   Divider,
-  Pagination,
-  Progress,
-  Popconfirm
+  Popconfirm,
+  // Pagination,
+  // Progress,
+  // Icon,
 } from "antd";
 import CardWrapper from "../../../commons/card/index";
 import ProgressWrapper from "../../../components/progress/index";
 import AvatarWrapper from "../../../components/avatar/index";
-import TableWrapper from "../../../components/table/index";
+//import TableWrapper from "../../../components/table/index";
+import TableWrapper from "../../../components/react-table";
 import { userDetails, usersData } from "../../../mocks/users";
 
 class TrafficAndSales extends React.Component {
@@ -313,7 +313,8 @@ class TrafficAndSales extends React.Component {
               </Col>
 
               <Col className="innerContentSpacing" span={24}>
-                <TableWrapper
+                <TableWrapper />
+                {/* <TableWrapper
                   //bordered={true}
                   columns={columns}
                   rowKey={record => record.login.uuid}
@@ -321,7 +322,7 @@ class TrafficAndSales extends React.Component {
                   pagination={this.state.pagination}
                   loading={this.state.loading}
                   onChange={this.handleTableChange}
-                />
+                /> */}
               </Col>
             </Row>
           </CardWrapper>

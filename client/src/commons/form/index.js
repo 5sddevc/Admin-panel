@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { Row, Col } from "antd";
+import Select from "../../components/input/Select";
 import Button from "../../components/button/index"
 
 const loginApiCall = values => {
@@ -28,8 +29,9 @@ const RootForm = props => {
           handleSubmit }) => (
           <Form>
             <Row>
-              {props.controls.map(val => (
-                <Col key={val.name} span={val.span}>
+              {props.controls.map(val => {
+                console.log("Type",val.Type);
+                return (<Col key={val.name} span={val.span}>
                   <val.Type
                     password={
                       val.name === "password" || val.name === "confirmPassword"
@@ -41,13 +43,14 @@ const RootForm = props => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder={val.placeholder}
+                    defaultValue={val.Type==Select?val.defaultValue:null}
                     addonBefore={val.addonBefore}
-                  />
+                  >{val.Type==Select ? val.options() : null}</val.Type>
                   {errors[val.name] && touched[val.name] ? (
                     <div>{errors[val.name]}</div>
                   ) : null}
                 </Col>
-              ))}
+              )})}
             </Row>
             <Row
               type="flex"
