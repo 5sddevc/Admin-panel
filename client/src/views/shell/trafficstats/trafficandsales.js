@@ -11,9 +11,10 @@ import {
 } from "antd";
 import CardWrapper from "../../../components/card/index";
 import ProgressWrapper from "../../../components/progress/index";
-import TableWrapper from "../../../components/table/index";
-// import { userDetails, usersData } from "../../../mocks/users";
-// import AvatarWrapper from "../../../components/avatar/index";
+import AvatarWrapper from "../../../components/avatar/index";
+//import TableWrapper from "../../../components/table/index";
+import TableWrapper from "../../../components/react-table";
+import { userDetails, usersData } from "../../../mocks/users";
 
 class TrafficAndSales extends React.Component {
   constructor(props) {
@@ -312,7 +313,8 @@ class TrafficAndSales extends React.Component {
               </Col>
 
               <Col className="innerContentSpacing" span={24}>
-                <TableWrapper
+                <TableWrapper />
+                {/* <TableWrapper
                   //bordered={true}
                   columns={columns}
                   rowKey={record => record.login.uuid}
@@ -320,7 +322,7 @@ class TrafficAndSales extends React.Component {
                   pagination={this.state.pagination}
                   loading={this.state.loading}
                   onChange={this.handleTableChange}
-                />
+                /> */}
               </Col>
             </Row>
           </CardWrapper>
