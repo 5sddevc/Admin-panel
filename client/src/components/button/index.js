@@ -13,10 +13,10 @@ const ButtonWrapper = props => {
   return <StyledButton {...props}></StyledButton>;
 };
 
-ButtonWrapper.propTypes = {
-  children: propTypes.string.isRequired,
-  block: propTypes.bool.isRequired,
-  onClick: propTypes.func
-};
+// ButtonWrapper.propTypes = {
+//   children: propTypes.string.isRequired,
+//   block: propTypes.bool.isRequired,
+//   onClick: propTypes.func
+// };
 
 export default ButtonWrapper;

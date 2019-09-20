@@ -1,31 +1,42 @@
 import React from "react";
 import LineChart from "../../../components/charts/LineChart";
-import { lineGraph } from "../../../mocks/graphs";
+import PieChart from "../../../components/charts/PieChart";
+import { lineGraph, pieChart } from "../../../mocks/graphs";
 import ResponsiveContainerWrapper from "../../../components/charts/ResponsiveContainer";
 
 let graphData = [];
-
+let pieCharts = [];
 const graphDatas = () => {
   for (let i = 0; i < 7; i++) {
     graphData = graphData.concat(lineGraph());
   }
   return graphData;
 };
-
+const graphPieDatas = () => {
+  for (let i = 0; i < 3; i++) {
+    pieCharts = pieCharts.concat(pieChart());
+  }
+  return pieCharts;
+};
 graphDatas();
-
-const RenderChart = props => {
-
+graphPieDatas();
+const RenderChart = (props) => {
   return (
-    <ResponsiveContainerWrapper width="100%" height={300}>
-      <LineChart
-        lineColor1="#fff523"
-        lineColor2="#00f523"
-        margin={{ top: 40, right: 20, bottom: 5 }}
-        isCartReq={false}
-        data={graphData}
-      />
-    </ResponsiveContainerWrapper>
+    <React.Fragment>
+      <ResponsiveContainerWrapper height={300}>
+        <LineChart
+          lineColor={['#fff523', "#00ff23", '#ff00ff', '#f345f8', '#f8d823']}
+          data={graphData}
+        />
+      </ResponsiveContainerWrapper>
+      <ResponsiveContainerWrapper height={300}>
+        <PieChart
+          pieColor={['#757573', "#00ff23", '#ff00ff']}
+          data={pieCharts}
+          isLegend={true}
+        />
+      </ResponsiveContainerWrapper>
+    </React.Fragment>
   );
 };
 
