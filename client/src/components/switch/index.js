@@ -3,6 +3,12 @@ import styled from "styled-components";
 import {Switch} from 'antd';
 
 const StyledSwitch = styled(Switch)`
+    // &.ant-switch-checked {
+    //     background-color: red !important;
+    // }
+    // &.ant-switch {
+    //     background-color: yellow;
+    // }
 //   color: palevioletred;
 //   font-weight: bold;
 //   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);

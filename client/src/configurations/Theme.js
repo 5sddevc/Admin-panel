@@ -40,6 +40,14 @@ export const theme = {
             "normal": 400,
             "lighter": 300,
         },
+        "tag": {
+            "colors": {
+                "primary": "#3677fd",
+                "secondary": "#26e5ab",
+                "third": "#fdbd31",
+                "fourth": "#fe4235",
+            }
+        },
         "border": "#c8ced3",
         "spacing": 35,
         "ratio": 2
@@ -78,6 +86,14 @@ export const theme = {
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(12, 19, 48, 1)"
+        },
+        "tag": {
+            "colors": {
+                "primary": "#3677fd",
+                "secondary": "#26e5ab",
+                "third": "#fdbd31",
+                "fourth": "#fe4235",
+            }
         },
         "border": "#23282c",
         "spacing": 35,

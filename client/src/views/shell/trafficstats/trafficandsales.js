@@ -12,9 +12,12 @@ import {
 import CardWrapper from "../../../components/card/index";
 import ProgressWrapper from "../../../components/progress/index";
 import AvatarWrapper from "../../../components/avatar/index";
+import ButtonWrapper from "../../../components/button";
+import TagWrapper from "../../../components/tag";
+import SwitchWrapper from "../../../components/switch";
 //import TableWrapper from "../../../components/table/index";
 import TableWrapper from "../../../components/react-table";
-import { userDetails, usersData } from "../../../mocks/users";
+import { userDetails, usersData, tableData } from "../../../mocks/users";
 
 class TrafficAndSales extends React.Component {
   constructor(props) {
@@ -110,6 +113,18 @@ class TrafficAndSales extends React.Component {
       });
     });
   };
+
+  testfunc = () => console.log("HEEEEYYYY", this);
+  statusMapper = (status) => {
+    let map = {
+      Free: "primary",
+      Subscribed: "secondary",
+      Paused: "third",
+      Banned: "fourth"
+    }
+    return map[status];
+  }
+
   render() {
     console.log("Table State", this.state);
     const columns = this.columns.map(col => {
@@ -313,7 +328,14 @@ class TrafficAndSales extends React.Component {
               </Col>
 
               <Col className="innerContentSpacing" span={24}>
-                <TableWrapper />
+                <TableWrapper 
+                  data={tableData} 
+                  content={[{ name: "", id: "profilePic", centered: true, small: true, sortable: false, render: (r) => {return <AvatarWrapper size="large" src={r.original[r.column.id]}></AvatarWrapper>;} }, 
+                  { name: "Name", id: "username", },
+                  { name: "Email", id: "email", sortable: false, },
+                  { name: "Status", id: "status", sortable: false, render: r => <TagWrapper type={this.statusMapper(r.original[r.column.id])}>{r.original[r.column.id]}</TagWrapper> },
+                  { name: "Actions", id: "actions", sortable: false, render: r => <div><SwitchWrapper defaultChecked={r.original["status"] !== "Banned"} style={{ marginRight: 10 }}></SwitchWrapper> User is {r.original["status"] !== "Banned" ? "Active" : "In-Active"}</div> }]}
+                />
                 {/* <TableWrapper
                   //bordered={true}
                   columns={columns}

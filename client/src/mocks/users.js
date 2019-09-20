@@ -79,4 +79,44 @@ const userDetails = () => {
   };
   return details;
 };
-export { userDetails, usersData };
+
+let tableData = [
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "ng123",
+    email: "hing@tmailservices.com",
+    status: "Free"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "ng123",
+    email: "ng@tmailservices.com",
+    status: "Free"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "Tester12345",
+    email: "tisa@tmailservices.com",
+    status: "Subscribed"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "tss12345",
+    email: "tisssa@tmailservices.com",
+    status: "Banned"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "ster",
+    email: "iamtisa@tmailservices.com",
+    status: "Subscribed"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
+  }
+];
+
+export { userDetails, usersData, tableData };
