@@ -9,7 +9,7 @@ import {
   // Progress,
   // Icon,
 } from "antd";
-import CardWrapper from "../../../commons/card/index";
+import CardWrapper from "../../../components/card/index";
 import ProgressWrapper from "../../../components/progress/index";
 import AvatarWrapper from "../../../components/avatar/index";
 //import TableWrapper from "../../../components/table/index";

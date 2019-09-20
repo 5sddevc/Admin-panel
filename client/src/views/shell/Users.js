@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { store } from "../../ConfigureStore";
 import { Row, Col } from "antd";
 import { openModal } from "../../actions/Modal";
-import CardWrapper from "../../commons/card/index";
-import UserCard from "../../components/cards/User";
+import CardWrapper from "../../components/card/index";
+import UserCard from "../../components/card/User";
 import Icon from "../../components/Icon/index";
 import { usersData } from "../../mocks/users";
 
