@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 import styled from "styled-components";
-import { LeftSideBarMenu } from "../../commons/sidebarMenus"
+import { LeftSideBarMenu } from "../sidebarMenus/index";
 
 const { Sider } = Layout;
 

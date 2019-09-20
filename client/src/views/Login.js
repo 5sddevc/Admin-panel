@@ -2,10 +2,10 @@ import React from "react";
 
 import Input from "../components/input/index";
 import Button from "../components/button/index";
-import RootForm from "../commons/form/index";
+import RootForm from "../components/form/index";
 import { loginValidations } from "../configurations/Schemas";
 import { Layout, Row, Col } from "antd";
-import Card from "../commons/card/index";
+import Card from "../components/card/index";
 import Icon from "../components/Icon/index";
 import Select from "../components/input/Select";
 import Option from "../components/input/SelectOptions";

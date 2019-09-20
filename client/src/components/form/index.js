@@ -1,8 +1,8 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { Row, Col } from "antd";
-import Select from "../../components/input/Select";
-import Button from "../../components/button/index"
+import Select from "../input/Select";
+import Button from "../button/index"
 
 const loginApiCall = values => {
   console.log(values);

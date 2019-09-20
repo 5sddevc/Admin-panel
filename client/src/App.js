@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./configurations/Theme";
 import Routes from "./Routes";
-import RootModal from "./commons/modals";
+import RootModal from "./components/modals";
 
 function App(props) {
   console.log("PROPS", props)

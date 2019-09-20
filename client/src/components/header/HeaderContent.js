@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 import { Menu } from "antd";
 import { menuShow } from "../../configurations/Config";
 import { connect } from "react-redux";
-import Switch from "../../components/switch";
+import Switch from "../switch";
 import { toggleMode } from "../../actions/App";
 import { Row, Col } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
 import { FiBell, FiMail } from "react-icons/fi";
 import PopoverWrapper from "../popover/index";
-import MenuWrapper from "../../components/menu";
-import Badge from "../../components/badge/index";
-import Avatar from "../../components/avatar/index";
-import Icon from "../../components/Icon/index";
-import Button from "../../components/button/index";
+import MenuWrapper from "../menu";
+import Badge from "../badge/index";
+import Avatar from "../avatar/index";
+import Icon from "../Icon/index";
+import Button from "../button/index";
 
 class HeaderContent extends React.Component {
   constructor(props) {

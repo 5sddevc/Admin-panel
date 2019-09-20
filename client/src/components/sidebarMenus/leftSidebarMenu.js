@@ -1,7 +1,7 @@
 //Left side bar menu content 
 import React from "react";
 import { Menu } from "antd";
-import MenuWrapper from "../../components/menu";
+import MenuWrapper from "../menu";
 
 const LeftSideBar = (props) => {
   return(

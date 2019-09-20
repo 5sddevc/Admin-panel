@@ -1,7 +1,7 @@
 import React from "react";
-import LineChart from "../../../commons/charts/LineChart";
+import LineChart from "../../../components/charts/LineChart";
 import { lineGraph } from "../../../mocks/graphs";
-import ResponsiveContainerWrapper from "../../../commons/charts/ResponsiveContainer";
+import ResponsiveContainerWrapper from "../../../components/charts/ResponsiveContainer";
 
 let graphData = [];
 
