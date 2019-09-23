@@ -14,7 +14,8 @@ import {
 import ContentWrapper from "../../components/maincontent/index";
 import FooterWrapper from "../../components/footer/index";
 import Dashboard from "./Dashboard";
-import Users from "./Users"; 
+//import Users from "./Users"; 
+import Users from "./UsersScreen";
 import Reports from "./Reports";
 import Requests from "./Requests";
 import Settings from "./Settings" ;

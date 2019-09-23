@@ -116,6 +116,48 @@ let tableData = [
     username: "aster",
     email: "aiamtisa@tmailservices.com",
     status: "Paused"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
+  },
+  {
+    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+    username: "aster",
+    email: "aiamtisa@tmailservices.com",
+    status: "Paused"
   }
 ];
 

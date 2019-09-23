@@ -12,6 +12,16 @@ const StyledContent = styled(Content)`
   padding-bottom: 0;
 
   height: calc(100vh - 64px - 38px);
+
+  h1, h2, h3, h4, h5 {
+    color: ${props => props.theme[props.theme.mode].textColor.primary};
+    margin: none important;
+  }
+
+  .ant-select-dropdown-menu {
+    background-color: ${props => props.theme[props.theme.mode].background.primary};
+    color: ${props => props.theme[props.theme.mode].textColor.primary}; 
+  }
 //   font-weight: bold;
 //   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
 `;

@@ -33,7 +33,7 @@ const TableWrapper = props => {
             ) : val.name,
           id: val.id,
           //accessor: d => {console.log(d.user_name); return d.user_name;}
-          sortable: val.sortable,
+          sortable: val.sortable || false,
           Cell: val.render ? val.render : (r) => r.original[val.id]
         }))}
       //   {
