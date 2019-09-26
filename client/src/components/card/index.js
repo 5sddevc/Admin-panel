@@ -5,7 +5,11 @@ import styled from "styled-components";
 
 const StyledCard = styled(Card)`
   color: ${props => props.theme[props.theme.mode].textColor.primary};
-  border: 1px solid ${props => props.theme[props.theme.mode].border};
+  background-color: ${props => props.theme[props.theme.mode].background.primary};
+  //border: 1px solid ${props => props.theme[props.theme.mode].border};
+  border: none;
+  border-radius: ${props => props.theme[props.theme.mode].card.borderRadius}px;
+  box-shadow: 6px 6px 10px -4px rgba(0,0,0,0.15);
   transition: none;
   
   * {
@@ -14,15 +18,19 @@ const StyledCard = styled(Card)`
   }
 
   // .mainContentDiv:not(:first-child) & {
-  //   margin-top: ${props => props.theme[props.theme.mode].spacing}px;
+  //   margin-top: ${props => props.theme[props.theme.mode].spacing.outer}px;
   // }
 
   &.mainContentDiv {
-    margin-bottom: ${props => props.theme[props.theme.mode].spacing}px;
+    margin-bottom: ${props => props.theme[props.theme.mode].spacing.outer}px;
+  }
+
+  &.mainContentDiv .ant-card-body {
+    padding: ${props => props.theme[props.theme.mode].spacing.inner}px;
   }
 
   .innerContentSpacing {
-    margin-top: ${props => props.theme[props.theme.mode].spacing}px;
+    margin-top: ${props => props.theme[props.theme.mode].spacing.outer}px;
   }
 
   && .innerSmallCard & .ant-card-body {
@@ -37,6 +45,7 @@ const StyledCard = styled(Card)`
 
   .ant-card-body {
     background: ${props => props.theme[props.theme.mode].background.primary};
+    border-radius: ${props => props.theme[props.theme.mode].card.borderRadius}px;
   }
 
   .ant-card-actions {

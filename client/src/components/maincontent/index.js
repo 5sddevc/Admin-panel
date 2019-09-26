@@ -8,7 +8,7 @@ const StyledContent = styled(Content)`
   background: ${props => props.theme[props.theme.mode].background.secondary};
   color: ${props => props.theme[props.theme.mode].textColor.primary}; 
 
-  padding: ${props => props.theme[props.theme.mode].spacing}px;
+  padding: ${props => props.theme[props.theme.mode].spacing.outer}px;
   padding-bottom: 0;
 
   height: calc(100vh - 64px - 38px);
@@ -16,6 +16,26 @@ const StyledContent = styled(Content)`
   h1, h2, h3, h4, h5 {
     color: ${props => props.theme[props.theme.mode].textColor.primary};
     margin: none important;
+  }
+
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+  }
+
+  .hint, .normal {
+    font-size: 0.8rem;
+  }
+
+  .headingColor {
+    color: ${props => props.theme[props.theme.mode].textColor.primary};
+  }
+
+  .hintColor {
+    color: ${props => props.theme[props.theme.mode].textColor.hint};
   }
 
   .ant-select-dropdown-menu {

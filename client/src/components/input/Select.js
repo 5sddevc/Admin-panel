@@ -1,14 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Input,  Select, Icon } from "antd";
 
-const StyledInput = styled(Select).attrs(() => ({}))`
+const InputStyles = css`
 .ant-select-selection {
   color: ${props => props.theme[props.theme.mode].textColor.primary};
   background-color: ${props => props.theme[props.theme.mode].background.primary};
-  border: 1px solid ${props => props.theme[props.theme.mode].primary.main};
+  //border: 1px solid ${props => props.theme[props.theme.mode].primary.main};
+  border: none !important
+  box-shadow: 0 0px 15px 0 rgba(0,0,0,0.15);
   //${props => props.appStyles ? props.appStyles[0] : null};
-  height: 38px;
+  //height: 38px;
 }
 
 //${props => props.appStyles ? props.appStyles[1] : null};
@@ -19,7 +21,23 @@ const StyledInput = styled(Select).attrs(() => ({}))`
 }
 
 .ant-select-arrow {
+  color: ${props => props.theme[props.theme.mode].primary.main};
+}
+
+.ant-select-dropdown-menu {
+  background-color: ${props => props.theme[props.theme.mode].background.primary};
+}
+
+.ant-select-dropdown-menu-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
   color: ${props => props.theme[props.theme.mode].textColor.primary};
+  
+}
+
+.ant-select-dropdown-menu-item:hover, .ant-select-dropdown-menu-item:hover, .ant-select-dropdown-menu-item-active {
+  background-color: ${props => props.theme[props.theme.mode].primary.light};
 }
   //   color: palevioletred;
   //   font-weight: bold;
@@ -27,7 +45,7 @@ const StyledInput = styled(Select).attrs(() => ({}))`
 `;
 
 const SelectWrapper = props => {
-  return <StyledInput {...props}>{props.children}</StyledInput>;
+  return <Select className={props.className} dropdownClassName={props.className} {...props}>{props.children}</Select>;
 };
 
-export default SelectWrapper;
+export default styled(SelectWrapper).attrs({ size: "large" })`${InputStyles}`;

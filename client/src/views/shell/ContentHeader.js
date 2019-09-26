@@ -5,12 +5,13 @@ import SelectWrapper from "../../components/input/Select"
 import OptionsWrapper from "../../components/input/SelectOptions"
 import { FiSearch } from "react-icons/fi";
 
+//Need to make this responsive
 const ContentHeader = props => {
     return (
         <Row type="flex" align="middle" justify="space-between">
             <Col>
                 <div style={{ display: "flex", alignItems: "center" }}>
-                    <span style={{ fontSize: "1.4rem", fontWeight: "bold" }}>{props.title}</span>
+                    <span className="heading" style={{ fontWeight: "bold" }}>{props.title}</span>
                     <span style={{ display: "inline-block", width: 6, height: 6, margin: "0px 6px", borderRadius: 50, backgroundColor: "#1890ff", }} />
                     <span style={{ fontSize: "0.75rem", fontWeight: "bold" }}>{props.count}</span>
                 </div>
@@ -21,7 +22,7 @@ const ContentHeader = props => {
                     <InputWrapper prefix={<FiSearch />} placeHolder="Search" />
                 </Col>
                 <Col span={8} style={{ paddingLeft: 15 }}>
-                    <SelectWrapper defaultValue="View all" style={{ width: "100%", height: 38}}>
+                    <SelectWrapper defaultValue="View all" style={{ width: "100%" }}>
                       <OptionsWrapper value="all">View all</OptionsWrapper>
                       <OptionsWrapper value="free">Free</OptionsWrapper>
                       <OptionsWrapper value="subscribed">Subscribed</OptionsWrapper>

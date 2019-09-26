@@ -30,10 +30,10 @@ export const theme = {
             "contrastText": "#ffffff"
         },
         "textColor": {
-            "primary": "rgba(0, 0, 0, 0.65)",
+            "primary": "rgba(0, 0, 0, 1)",
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
-            "hint": "rgba(12, 19, 48, 1)"
+            "hint": "rgba(0, 0, 0, 0.65)"
         },
         "textWeight": {
             "bold": 600,
@@ -48,8 +48,14 @@ export const theme = {
                 "fourth": "#fe4235",
             }
         },
+        "card": {
+            "borderRadius": 8
+        },
         "border": "#c8ced3",
-        "spacing": 35,
+        "spacing": {
+            "outer": 35,
+            "inner": 14
+        },
         "ratio": 2
 
     },
@@ -85,7 +91,7 @@ export const theme = {
             "primary": "rgba(255, 255, 255, 1)",
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
-            "hint": "rgba(12, 19, 48, 1)"
+            "hint": "rgba(255, 255, 255, 0.65)"
         },
         "tag": {
             "colors": {
@@ -95,8 +101,14 @@ export const theme = {
                 "fourth": "#fe4235",
             }
         },
+        "card": {
+            "borderRadius": 8
+        },
         "border": "#23282c",
-        "spacing": 35,
+        "spacing": {
+            "outer": 35,
+            "inner": 14
+        },
         "ratio": 2
     }
 };

@@ -104,7 +104,9 @@ ${props => props.content.map((val, ind) => val.small ? css`
 }
 
 
-
+// .-loading.-active {
+    //background: rgba(240,255,255,0.1);
+// }
 
 
 

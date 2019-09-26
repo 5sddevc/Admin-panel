@@ -80,85 +80,112 @@ const userDetails = () => {
   return details;
 };
 
-let tableData = [
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "ng123",
-    email: "hing@tmailservices.com",
-    status: "Free"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "ng123",
-    email: "ng@tmailservices.com",
-    status: "Free"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "Tester12345",
-    email: "tisa@tmailservices.com",
-    status: "Subscribed"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "tss12345",
-    email: "tisssa@tmailservices.com",
-    status: "Banned"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "ster",
-    email: "iamtisa@tmailservices.com",
-    status: "Subscribed"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
-  },
-  {
-    profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
-    username: "aster",
-    email: "aiamtisa@tmailservices.com",
-    status: "Paused"
+const tableDataGenerator = (numberOfUsers) => {
+
+  const chance = new Chance();
+  let users = [];
+
+  const statusMapper = [
+    "Free",
+    "Subscribed",
+    "Paused",
+    "Banned"
+  ]
+
+
+  for(let i = 0; i < numberOfUsers; i++) {
+    users.push({
+      profilePic: `https://api.adorable.io/avatars/100/${chance.first()}`,
+      username: chance.first(),
+      email: chance.email(),
+      status: statusMapper[Math.floor(Math.random()*statusMapper.length)],
+    });
   }
-];
+
+  return users;
+}
+
+let tableData = tableDataGenerator(9);
+
+// let tableData = [
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "ng123",
+//     email: "hing@tmailservices.com",
+//     status: "Free"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "ng123",
+//     email: "ng@tmailservices.com",
+//     status: "Free"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "Tester12345",
+//     email: "tisa@tmailservices.com",
+//     status: "Subscribed"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "tss12345",
+//     email: "tisssa@tmailservices.com",
+//     status: "Banned"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "ster",
+//     email: "iamtisa@tmailservices.com",
+//     status: "Subscribed"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   },
+//   {
+//     profilePic: "https://img.icons8.com/cute-clipart/64/000000/visa.png",
+//     username: "aster",
+//     email: "aiamtisa@tmailservices.com",
+//     status: "Paused"
+//   }
+// ];
 
 export { userDetails, usersData, tableData };

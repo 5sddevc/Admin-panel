@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Input} from 'antd';
 
-const StyledInput = styled(Input).attrs(() => ({}))`
+const StyledInput = styled(Input).attrs(() => ({ size: "large" }))`
 //   color: palevioletred;
 //   font-weight: bold;
 //   box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
@@ -11,8 +11,8 @@ input {
     color: ${props => props.theme[props.theme.mode].textColor.primary};
     border: 1px solid ${props => props.theme[props.theme.mode].primary.main};
     //${props => props.appStyles ? props.appStyles : null};
-    padding-top: 18px;
-    padding-bottom: 18px;
+    // padding-top: 18px;
+    // padding-bottom: 18px;
 }
 
 * {

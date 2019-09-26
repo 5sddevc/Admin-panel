@@ -329,7 +329,7 @@ class TrafficAndSales extends React.Component {
 
               <Col className="innerContentSpacing" span={24}>
                 <TableWrapper 
-                  data={tableData} 
+                  tableData={tableData} 
                   content={[{ name: "", id: "profilePic", centered: true, small: true, sortable: false, render: (r) => {return <AvatarWrapper size="large" src={r.original[r.column.id]}></AvatarWrapper>;} }, 
                   { name: "Name", id: "username", },
                   { name: "Email", id: "email", sortable: false, },

@@ -1,73 +1,99 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactTable from "react-table";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 import "react-table/react-table.css";
 import styled from "styled-components";
 import Style from "./Style"
+import { DEFAULT_TABLE_PAGE_SIZE } from "../../configurations/Constants"
 
 const StyledTable = styled(ReactTable)`
     ${Style}
 `;
 
 
-//Have to implement sorting, avatars, actions and column sizes through props
+//Have to implement large column sizes
 const TableWrapper = props => {
-  //console.log("ALALALA", props.content[0].render())
+  const [page, setPage] = useState(0);
+  const [lastPage, setLastPage] = useState(0);
+  const [pageSize, setPageSize] = useState(props.pageSize || DEFAULT_TABLE_PAGE_SIZE);
+  //const [dataCount, setDataCount] = useState(props.dataCount ? props.dataCount : props.dataCount === 0 ? props.dataCount : props.tableData.length);
+  let dataCount = props.dataCount !== undefined && props.dataCount !== null ? props.dataCount : props.tableData ? props.tableData.length > 0 ? props.tableData.length : 1 : 1;
+  const [pages, setPages] = useState(Math.ceil(dataCount/pageSize));
+  const [minRows, setMinRows] = useState(dataCount > pageSize ? pageSize : dataCount < 1 ? 1 : dataCount);
+  const [loading, setLoading] = useState(false);
+
+  console.log("TABLE", page, lastPage, pageSize, minRows);
+
+  useEffect(() => {
+    let isData = props.tableData ? props.tableData.length > 0 : false;
+
+    setPages(Math.ceil(dataCount/pageSize));
+
+    if(props.getData && isData) {
+      setLastPage(props.tableData ? Math.ceil(props.tableData.length/pageSize) - 1 : 0);
+      setMinRows(dataCount - ((page) * pageSize) > pageSize ? pageSize : dataCount - ((page) * pageSize) < 1 ? 1 : dataCount - ((page) * pageSize));
+    }
+    
+    if(props.enableReInit) {//In case, table needs to be reset on new data, Could be replaced with enableReinitialize prop - done
+      if((props.getData && !isData) || !props.getData) {
+        setPage(0);
+        setLastPage(0);//Probably only when props.getData
+        setMinRows(dataCount > pageSize ? pageSize : dataCount < 1 ? 1 : dataCount);//Should minRows be reset here for the first page? I think so. Probably only when !props.getData
+      }
+    }
+  }, [props.tableData]);
+
+  useEffect(() => {
+    if(((page === 0 && lastPage === 0) || page > lastPage) && (props.getData)) {
+      setLoading(true);
+      setLastPage(page);//May not be neccessary here
+      //will pass callback into action which will be called in saga after data is fetched, api params will also be passed here
+      props.getData(12 ,51, 12, 23, (res) => {
+        setLoading(false);
+      });
+    }
+  }, [page]);
+
+  //console.log("ALALALA", props)
   return (
     <StyledTable
-      data={props.data}
-      noDataText="No users found"
-      showPageSizeOptions={false}
-      columns={
-        //[
-        props.content.map((val) => (
-        {
-          Header: val.sortable ? ( 
-            <div style={{display: "flex", alignItems: "center", flexGrow: 1}}>
-              <div className="sortingHeader" style={{display: "flex", fontSize: "1.3rem", flexDirection: "column", marginRight: 10}}>
-                <div className="ascending"><FiChevronUp /></div>
-                <div className="descending"><FiChevronDown /></div>
-              </div>
-              {val.name}
+    {...props}
+    data={props.tableData || []}
+    noDataText="No data found"
+    showPageSizeOptions={false}
+    loading={loading}
+    columns={
+      props.content.map((val) => (
+      {
+        Header: val.sortable ? ( 
+          <div style={{display: "flex", alignItems: "center", flexGrow: 1}}>
+            <div className="sortingHeader" style={{display: "flex", fontSize: "1.3rem", flexDirection: "column", marginRight: 10}}>
+              <div className="ascending"><FiChevronUp /></div>
+              <div className="descending"><FiChevronDown /></div>
             </div>
-            ) : val.name,
-          id: val.id,
-          //accessor: d => {console.log(d.user_name); return d.user_name;}
-          sortable: val.sortable || false,
-          Cell: val.render ? val.render : (r) => r.original[val.id]
-        }))}
-      //   {
-      //     Header: "Name",
-      //     id: "name",
-      //     sortable: false,
-      //     accessor: (d) => d["username"]
-      //   },
-      //   {
-      //     Header: "Email",
-      //     id: "email",
-      //     sortable: false,
-      //     accessor: (d) => d["email"]
-      //   },
-      //   {
-      //     Header: "Status",
-      //     id: "status",
-      //     sortable: false,
-      //     accessor: (d) => d["status"],
-      //     //Cell: row => <p>row.original[whatever]</p>
-      //   },
-      //   {
-      //     Header: "Actions",
-      //     id: "actions",
-      //     sortable: false,
-      //     Cell: row => <p>{row.original["actions"]}</p>
-      //   }
-      // ]}
-      defaultPageSize={10}
-      resizable={false}
-      pageText={""}
-      previousText={"‹"}
-      nextText={"›"}
-      {...props}
+            {val.name}
+          </div>
+          ) : val.name,
+        id: val.id,
+        sortable: val.sortable || false,
+        Cell: val.render ? val.render : (r) => r.original[val.id]
+      }))}
+    defaultPageSize={DEFAULT_TABLE_PAGE_SIZE}
+    page={page}
+    pageSize={pageSize}
+    pages={pages}
+    onPageChange={(nextPage) => { 
+      if(nextPage <= lastPage || !props.getData) {
+        let rowsToShow = dataCount - ((nextPage) * pageSize);
+        setMinRows(rowsToShow > pageSize ? pageSize : rowsToShow < 1 ? 1 : rowsToShow);//Less than one check may not be necessary
+      }
+      setPage(nextPage);
+    }}
+    minRows={props.adjustRows === false ? pageSize : minRows }
+    resizable={false}
+    pageText={""}
+    previousText={"‹"}
+    nextText={"›"}
     />
   )
 }
