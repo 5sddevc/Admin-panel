@@ -11,7 +11,7 @@ const StyledTable = styled(ReactTable)`
 `;
 
 
-//Have to implement large column sizes
+//Have to implement large column sizes, could store table data locally too
 const TableWrapper = props => {
   const [page, setPage] = useState(0);
   const [lastPage, setLastPage] = useState(0);
@@ -27,11 +27,11 @@ const TableWrapper = props => {
   useEffect(() => {
     let isData = props.tableData ? props.tableData.length > 0 : false;
 
-    setPages(Math.ceil(dataCount/pageSize));
+    setPages(Math.ceil(dataCount/pageSize));//A seperate effect can be made for this and it should happen here only if !prop.getData
 
     if(props.getData && isData) {
       setLastPage(props.tableData ? Math.ceil(props.tableData.length/pageSize) - 1 : 0);
-      setMinRows(dataCount - ((page) * pageSize) > pageSize ? pageSize : dataCount - ((page) * pageSize) < 1 ? 1 : dataCount - ((page) * pageSize));
+      setMinRows(dataCount - ((page) * pageSize) > pageSize ? pageSize : dataCount - ((page) * pageSize) < 1 ? 1 : dataCount - ((page) * pageSize));//This can be done with modulus and possibly moved outside the if
     }
     
     if(props.enableReInit) {//In case, table needs to be reset on new data, Could be replaced with enableReinitialize prop - done

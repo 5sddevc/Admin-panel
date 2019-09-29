@@ -2,11 +2,32 @@ import React from "react";
 import { Row, Col } from "antd";
 import TrafficStatsGraphic from "./trafficstats/trafficstatsgraphic";
 import TrafficAndSales from "./trafficstats/trafficandsales";
+import ResponsiveContainerWrapper from "../../components/charts/ResponsiveContainer";
+import LineChart from "../../components/charts/LineChart";
+import PieChart from "../../components/charts/PieChart";
+import { lineGraph, pieChart } from "../../mocks/graphs";
 import CardWrapper from "../../components/card";
 import MonthPickerWrapper from "../../components/datepickers/MonthPicker";
 import RangePickerWrapper from "../../components/datepickers/RangePicker";
 import UserStatCard from "../../appcomponents/dashboard/UserStatCard";
-import { FiUser } from "react-icons/fi"
+import { FiUser } from "react-icons/fi";
+
+let graphData = [];
+let pieCharts = [];
+const graphDatas = () => {
+  for (let i = 0; i < 7; i++) {
+    graphData = graphData.concat(lineGraph());
+  }
+  return graphData;
+};
+const graphPieDatas = () => {
+  for (let i = 0; i < 3; i++) {
+    pieCharts = pieCharts.concat(pieChart());
+  }
+  return pieCharts;
+};
+graphDatas();
+graphPieDatas();
 
 
 class Dashboard extends React.Component {
@@ -37,12 +58,27 @@ class Dashboard extends React.Component {
           <Col xs={24} sm={24} md={12} lg={12}>
             <span style={{ fontWeight: "bold" }} className="sub-heading">Users Chart&nbsp;&nbsp;&nbsp;</span>
             <MonthPickerWrapper format={"MMM - YYYY"} />
-            <CardWrapper style={{ marginTop: 14 }} />
+            <CardWrapper className="mainContentDiv" style={{ marginTop: 14 }}> 
+              <ResponsiveContainerWrapper style={{ margin: "0px 0px 5px 0px" }} height={350}>
+                <PieChart
+                  pieColor={['#757573', "#00ff23", '#ff00ff']}
+                  data={pieCharts}
+                  isLegend={true}
+                />
+              </ResponsiveContainerWrapper>
+            </CardWrapper>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12}>
             <span style={{ fontWeight: "bold" }} className="sub-heading">App Downloads&nbsp;&nbsp;&nbsp;</span>
             <RangePickerWrapper mode={['month', 'month']} format={"MMM - YYYY"} />
-            <CardWrapper style={{ marginTop: 14 }} />
+            <CardWrapper className="mainContentDiv" style={{ marginTop: 14 }}>
+              <ResponsiveContainerWrapper style={{ margin: "27px 0px" }} height={300}>
+                <LineChart
+                  lineColor={['#fff523', "#00ff23", '#ff00ff', '#f345f8', '#f8d823']}
+                  data={graphData}
+                />
+              </ResponsiveContainerWrapper>
+            </CardWrapper>
           </Col>
         </Row>
       </React.Fragment>

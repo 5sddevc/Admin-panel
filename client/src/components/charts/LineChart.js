@@ -4,6 +4,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 import XAxisWrapper from './chartComponents/xAxis/index';
 
 const renderLineChart = (props) => {
+  console.log(props);
   const obj = Object.keys(props.data[0]);
   return (
     <div>

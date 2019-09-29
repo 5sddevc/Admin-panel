@@ -2,9 +2,16 @@ import React from "react";
 import { ResponsiveContainer } from 'recharts';
 
 
+import styled from "styled-components";
+
+const StyledContainer = styled(ResponsiveContainer)`
+    margin: ${props => props.style.margin};
+`;
+
+
 const ResponsiveContainerWrapper = (props) => {
     return (
-        <ResponsiveContainer {...props} />
+        <StyledContainer {...props} />
     )
 }
 
