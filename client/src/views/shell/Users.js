@@ -22,16 +22,21 @@ const statusMapper = (status) => {
 
 const Users = props => {
     const [state, setState] = useState({apiCall: (...params) => props.dispatch(getUsers(...params))});
-    console.log("USERS PROPS", props);
+    //console.log("USERS PROPS", props);
     return (
         <Row>
             <Col span={24}>
-                <ContentHeader title="Users" count={542} />
+                <ContentHeader title="Users" count={542} 
+                options={[{label: "View All", value: "all"}, 
+                {label: "Free", value: "free"},
+                {label: "Subscribed", value: "subscribed"},
+                {label: "Paused", value: "paused"},
+                {label: "Banned", value: "banned"},]} />
                 {/* <button onClick={state.apiCall}>asd</button> */}
             </Col>
             <Col span={24} style={{ margin: "50px 0px" }}>
                 <TableWrapper 
-                    tableData={props.userData}
+                    tableData={props.userData.users}
                     //getData={(...params) => props.dispatch(getUsers(...params))}
                     getData={state.apiCall}
                     pageSize={5}
@@ -49,4 +54,4 @@ const Users = props => {
 
 }
 
-export default connect((storeState) => ({ userData: storeState.Users.users }))(Users);
+export default connect((storeState) => ({ userData: storeState.Users }))(Users);

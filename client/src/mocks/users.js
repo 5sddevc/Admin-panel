@@ -105,7 +105,20 @@ const tableDataGenerator = (numberOfUsers) => {
   return users;
 }
 
+const userStatsGenerator = () => {
+
+  let stats = {
+    free: Math.floor(Math.random() * 2001),
+    subscribed: Math.floor(Math.random() * 501),
+    paused: Math.floor(Math.random() * 51),
+    banned: Math.floor(Math.random() * 101)
+  };
+
+  return stats;
+}
+
 let tableData = tableDataGenerator(9);
+let userStatsData = userStatsGenerator();
 
 // let tableData = [
 //   {
@@ -188,4 +201,4 @@ let tableData = tableDataGenerator(9);
 //   }
 // ];
 
-export { userDetails, usersData, tableData };
+export { userDetails, usersData, tableData, userStatsData };

@@ -3,16 +3,25 @@ import propTypes from 'prop-types';
 import { PieChart, Pie, Tooltip, Legend, Cell } from 'recharts';
 
 const renderPieChart = (props) => {
-  const obj = Object.keys(props.data[0]);
+  var obj;
+  if(props.data[0])
+    obj = Object.keys(props.data[0]);
+
+  
+  //console.log("PIE CHART PROPS", props, obj)
 
   return (
     <PieChart width={props.width} height={props.height} margin={props.margin}>
+      {obj && !props.loading ? (
       <Pie data={props.data} dataKey={obj[2]} nameKey={obj[1]} cx="50%" cy="50%" outerRadius={props.size} legendType={props.legendType} Legend label={props.label}>
         {
           props.data.map((val, index) => <Cell key={`cell-${obj[0]}`} fill={props.pieColor[index]}/> )
         }
       </Pie>
-
+      ) : (
+      <Pie data={[{id: 1, name: "empty", val: 1}]} dataKey={"val"} nameKey={"name"} cx="50%" cy="50%" outerRadius={props.size} legendType={props.legendType} Legend label={props.label}>
+        <Cell key={`cell-1`} fill={"#A9A9A9"}/>
+      </Pie>)}
       {props.isLegend ? <Legend /> : null}
       {props.isTooltip ? <Tooltip /> : null}
     </PieChart>

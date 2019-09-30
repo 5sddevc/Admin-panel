@@ -4,18 +4,25 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 import XAxisWrapper from './chartComponents/xAxis/index';
 
 const renderLineChart = (props) => {
-  console.log(props);
-  const obj = Object.keys(props.data[0]);
+  //console.log(props);
+  var obj;
+  if(props.data[0])
+    obj = Object.keys(props.data[0]);
   return (
     <div>
-      <LineChart width={props.width} height={props.height} data={props.data} margin={props.margin}>
-        {obj.map((value, index) => {
+      <LineChart width={props.width} height={props.height} data={props.data.length !== 0 ? props.data : [{empty: 0}]} margin={props.margin}>
+        {obj && !props.loading ? obj.map((value, index) => {
+          //console.log("DETAILS", obj, value, index)
           return (
             <Line key={index.toString()} type={props.lineType} dataKey={obj[index + 2]} stroke={props.lineColor[index]} />
           )
-        })}
-        {props.isCartReq ? <CartesianGrid stroke={props.cartStroke} strokeDasharray={props.cartDash} /> : null}
-        <XAxis dataKey={obj[1]} />
+        }) : (
+          <Line type={props.lineType}  stroke={"#A9A9A9"} />
+        )}
+        {props.isCartReq ? <CartesianGrid dataKey={"empty"} stroke={props.cartStroke} strokeDasharray={props.cartDash} /> : null}
+        <XAxis 
+        dataKey={obj && !props.loading ? obj[1]: null} 
+        />
         <YAxis />
         {props.isTooltip ? <Tooltip />: null}
       </LineChart>
@@ -26,7 +33,7 @@ const renderLineChart = (props) => {
 renderLineChart.defaultProps = {
   width: '100%',
   height: 300,
-  margin: { top: 0, right: 0, left: 0, bottom: 0 },
+  margin: { top: 10, right: 50, left: 0, bottom: 0 },
   lineType: 'monotone',
   isCartReq: false,
   cartStroke: '#f0f0f0',

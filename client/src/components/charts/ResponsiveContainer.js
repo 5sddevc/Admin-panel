@@ -5,7 +5,7 @@ import { ResponsiveContainer } from 'recharts';
 import styled from "styled-components";
 
 const StyledContainer = styled(ResponsiveContainer)`
-    margin: ${props => props.style.margin};
+    margin: ${props => props.style ? props.style.margin : null};
 `;
 
 

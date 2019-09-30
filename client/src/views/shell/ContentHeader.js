@@ -22,12 +22,11 @@ const ContentHeader = props => {
                     <InputWrapper prefix={<FiSearch />} placeHolder="Search" />
                 </Col>
                 <Col span={8} style={{ paddingLeft: 15 }}>
-                    <SelectWrapper defaultValue="View all" style={{ width: "100%" }}>
-                      <OptionsWrapper value="all">View all</OptionsWrapper>
-                      <OptionsWrapper value="free">Free</OptionsWrapper>
-                      <OptionsWrapper value="subscribed">Subscribed</OptionsWrapper>
-                      <OptionsWrapper value="paused">Paused</OptionsWrapper>
-                      <OptionsWrapper value="banned">Banned</OptionsWrapper>
+                    <SelectWrapper defaultValue={props.options ? props.options[0].label : "-"} style={{ width: "100%" }}>
+                        {props.options ? props.options.map((val => {
+                            return <OptionsWrapper value={val.value}>{val.label}</OptionsWrapper>
+                        })) :
+                        null}
                     </SelectWrapper>
                 </Col>
                 

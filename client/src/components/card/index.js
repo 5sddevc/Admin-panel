@@ -12,20 +12,28 @@ const StyledCard = styled(Card)`
   box-shadow: 6px 6px 10px -4px rgba(0,0,0,0.15);
   transition: none;
   
-  * {
-    color: ${props => props.theme[props.theme.mode].textColor.primary};
-    transition: none;
-  }
+  // * {
+  //   color: ${props => props.theme[props.theme.mode].textColor.primary};
+  //   transition: none;
+  // }
 
   // .mainContentDiv:not(:first-child) & {
   //   margin-top: ${props => props.theme[props.theme.mode].spacing.outer}px;
   // }
 
-  &.mainContentDiv {
-    margin-bottom: ${props => props.theme[props.theme.mode].spacing.outer}px;
+  // &.mainContentDiv {
+  //   margin-bottom: ${props => props.theme[props.theme.mode].spacing.outer}px;
+  // }
+
+  // &.mainContentDiv .ant-card-body {
+  //   padding: ${props => props.theme[props.theme.mode].spacing.inner}px;
+  // }
+
+  .mainContentDiv &:nth-of-type(1) {
+    height: 100%;
   }
 
-  &.mainContentDiv .ant-card-body {
+  .mainContentDiv & .ant-card-body {
     padding: ${props => props.theme[props.theme.mode].spacing.inner}px;
   }
 

@@ -26,3 +26,22 @@ export const pieChart = () => {
   ]
   return data;
 }
+
+let graphData = [];
+let pieCharts = [];
+const graphDatas = () => {
+  for (let i = 0; i < 7; i++) {
+    graphData = graphData.concat(lineGraph());
+  }
+  return graphData;
+};
+const graphPieDatas = () => {
+  for (let i = 0; i < 3; i++) {
+    pieCharts = pieCharts.concat(pieChart());
+  }
+  return pieCharts;
+};
+graphDatas();
+graphPieDatas();
+
+export { graphData, pieCharts }

@@ -22,7 +22,7 @@ const TableWrapper = props => {
   const [minRows, setMinRows] = useState(dataCount > pageSize ? pageSize : dataCount < 1 ? 1 : dataCount);
   const [loading, setLoading] = useState(false);
 
-  console.log("TABLE", page, lastPage, pageSize, minRows);
+  //console.log("TABLE", page, lastPage, pageSize, minRows);
 
   useEffect(() => {
     let isData = props.tableData ? props.tableData.length > 0 : false;
