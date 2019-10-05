@@ -40,7 +40,7 @@ class Shell extends React.Component {
       <div className="App">
         <Layout>
           <HeaderWrapper
-            style={{ padding: "0px" }}
+            //style={{ padding: "0px" }}
             state={this.state}
             toggleCollapsed={this.toggleCollapsed}
           />

@@ -35,6 +35,18 @@ export const theme = {
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(0, 0, 0, 0.65)"
         },
+        "textSizes": {
+            "actual": {
+
+            },
+            "relative": {
+                "heading": "1.3rem",
+                "sub-heading": "1.05rem",
+                "normal": "0.85rem",
+                "small": "0.76rem",
+                "navbar": "0.9rem"
+            }
+        },
         "textWeight": {
             "bold": 600,
             "normal": 400,
@@ -53,6 +65,7 @@ export const theme = {
         },
         "border": "#c8ced3",
         "spacing": {
+            "mainscreen": 100,
             "outer": 35,
             "inner": 14
         },
@@ -92,6 +105,18 @@ export const theme = {
             "secondary": "rgba(193, 29, 29, 1)",
             "disabled": "rgba(12, 19, 48, 1)",
             "hint": "rgba(255, 255, 255, 0.65)"
+        },
+        "textSizes": {
+            "actual": {
+
+            },
+            "relative": {
+                "heading": "1.3rem",
+                "sub-heading": "1.05rem",
+                "normal": "0.85rem",
+                "small": "0.76rem",
+                "navbar": "0.9rem"
+            }
         },
         "tag": {
             "colors": {

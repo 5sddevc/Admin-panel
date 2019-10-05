@@ -84,11 +84,14 @@ class Dashboard extends React.Component {
         >
           <Col style={{ display: "flex", flexDirection: "column" }} className="mainContentDiv" xs={24} sm={24} md={12} lg={12}>
             <Row>
-              <span style={{ fontWeight: "bold" }} className="sub-heading">Users Chart&nbsp;&nbsp;&nbsp;</span>
-              <MonthPickerWrapper format={"MMM - YYYY"} />
+              <span style={{ fontWeight: "bold" }} className="sub-heading">Users Chart</span>
+              <MonthPickerWrapper style={{ marginLeft: 10 }} format={"MMM - YYYY"} />
             </Row>
             <Row style={{ marginTop: 14, flexGrow: 1 }}>
-              <CardWrapper> 
+              <CardWrapper style={{ position: "relative" }}>
+                <div style={{ position: "absolute", top: 14, left: 14 }}>
+                  Total Users: 2,543
+                </div> 
                 <ResponsiveContainerWrapper 
                 style={{ margin: "0px 0px 5px 0px" }} 
                 height={350}>
@@ -105,8 +108,8 @@ class Dashboard extends React.Component {
           </Col>
           <Col style={{ display: "flex", flexDirection: "column" }} className="mainContentDiv" xs={24} sm={24} md={12} lg={12}>
             <Row>
-              <span style={{ fontWeight: "bold" }} className="sub-heading">App Downloads&nbsp;&nbsp;&nbsp;</span>
-              <RangePickerWrapper mode={['month', 'month']} format={"MMM - YYYY"} />
+              <span style={{ fontWeight: "bold" }} className="sub-heading">App Downloads</span>
+              <RangePickerWrapper style={{ marginLeft: 10 }} mode={['month', 'month']} format={"MMM - YYYY"} />
             </Row>
             <Row style={{ marginTop: 14, flexGrow: 1 }}>
               <CardWrapper>
@@ -117,6 +120,7 @@ class Dashboard extends React.Component {
                   <LineChart
                     lineColor={['#fff523', "#00ff23", '#ff00ff', '#f345f8', '#f8d823']}
                     data={dashboardStats.appDownloads ? dashboardStats.appDownloads : []}
+                    margin={{ top: 10, right: 50, left: 0, bottom: 0 }}
                     loading={this.state.appDownloadsLoading}
                     //data={graphData}
                   />

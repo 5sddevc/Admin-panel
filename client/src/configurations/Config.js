@@ -9,7 +9,7 @@ const HeaderLogo = () => {
 
 const menuShow = {
   rightMenu: false,
-  leftMenu: true
+  leftMenu: false
 };
 const avatarIcons = {
   male: MaleAvatar,

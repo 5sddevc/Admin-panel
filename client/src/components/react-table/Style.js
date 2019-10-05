@@ -7,7 +7,8 @@ const style = css`
     overflow: auto;
     border: none !important;
     border-radius: 15px;
-    box-shadow: 0 2px 32px -10px rgba(0,0,0,0.15) !important;
+    //box-shadow: 0 2px 32px -10px rgba(0,0,0,0.15) !important;
+    box-shadow: 0px 6px 16px -6px rgba(0,0,0,0.15) !important;
 }
 
 .rt-table {
@@ -19,7 +20,7 @@ const style = css`
 .rt-thead {
     min-width: ${props => props.content.length * 100}px !important;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     position: relative;
     /* z-index: 100; */
     box-shadow: none !important;
@@ -89,7 +90,7 @@ ${props => props.content.map((val, ind) => val.small ? css`
 
 .rt-tbody {
     min-width: ${props => props.content.length * 100}px !important;
-    font-weight: bold;
+    font-weight: 600;
     background-color: rgb(249, 249, 249, 1);
 }
 

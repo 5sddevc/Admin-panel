@@ -13,32 +13,41 @@ const StyledTable = styled(ReactTable)`
 
 //Have to implement large column sizes, could store table data locally too
 const TableWrapper = props => {
-  const [page, setPage] = useState(0);
-  const [lastPage, setLastPage] = useState(0);
   const [pageSize, setPageSize] = useState(props.pageSize || DEFAULT_TABLE_PAGE_SIZE);
+  const [page, setPage] = useState(0);
+  const [lastPage, setLastPage] = useState(props.tableData ? Math.ceil(props.tableData.length/pageSize) - 
+  0 : //1 : 
+  0);//0);
   //const [dataCount, setDataCount] = useState(props.dataCount ? props.dataCount : props.dataCount === 0 ? props.dataCount : props.tableData.length);
   let dataCount = props.dataCount !== undefined && props.dataCount !== null ? props.dataCount : props.tableData ? props.tableData.length > 0 ? props.tableData.length : 1 : 1;
   const [pages, setPages] = useState(Math.ceil(dataCount/pageSize));
-  const [minRows, setMinRows] = useState(dataCount > pageSize ? pageSize : dataCount < 1 ? 1 : dataCount);
+  const [minRows, setMinRows] = useState(dataCount % pageSize || pageSize);
+    //dataCount > pageSize ? pageSize : dataCount < 1 ? 1 : dataCount);
   const [loading, setLoading] = useState(false);
 
   //console.log("TABLE", page, lastPage, pageSize, minRows);
+  console.log("TABLE", page, lastPage, minRows, props);
 
   useEffect(() => {
+    console.log("HERE")
     let isData = props.tableData ? props.tableData.length > 0 : false;
 
     setPages(Math.ceil(dataCount/pageSize));//A seperate effect can be made for this and it should happen here only if !prop.getData
 
     if(props.getData && isData) {
-      setLastPage(props.tableData ? Math.ceil(props.tableData.length/pageSize) - 1 : 0);
-      setMinRows(dataCount - ((page) * pageSize) > pageSize ? pageSize : dataCount - ((page) * pageSize) < 1 ? 1 : dataCount - ((page) * pageSize));//This can be done with modulus and possibly moved outside the if
+      console.log("HERE TOO", Math.ceil(props.tableData.length/pageSize) - 0)
+      setLastPage(props.tableData ? Math.ceil(props.tableData.length/pageSize) - 
+      0 : //1 : 
+      0);
+      setMinRows(dataCount % pageSize || pageSize);//This can be done with modulus and possibly moved outside the if
     }
     
     if(props.enableReInit) {//In case, table needs to be reset on new data, Could be replaced with enableReinitialize prop - done
       if((props.getData && !isData) || !props.getData) {
+        console.log("HERE THREE!")
         setPage(0);
         setLastPage(0);//Probably only when props.getData
-        setMinRows(dataCount > pageSize ? pageSize : dataCount < 1 ? 1 : dataCount);//Should minRows be reset here for the first page? I think so. Probably only when !props.getData
+        setMinRows(dataCount % pageSize || pageSize);//Should minRows be reset here for the first page? I think so. Probably only when !props.getData
       }
     }
   }, [props.tableData]);

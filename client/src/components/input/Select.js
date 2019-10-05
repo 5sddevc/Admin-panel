@@ -8,7 +8,7 @@ const InputStyles = css`
   background-color: ${props => props.theme[props.theme.mode].background.primary};
   //border: 1px solid ${props => props.theme[props.theme.mode].primary.main};
   border: none !important
-  box-shadow: 0 0px 15px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px -5px rgba(0,0,0,0.15);
   //${props => props.appStyles ? props.appStyles[0] : null};
   //height: 38px;
 }

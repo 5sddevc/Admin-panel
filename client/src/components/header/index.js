@@ -8,8 +8,15 @@ const { Header } = Layout;
 
 const StyledHeader = styled(Header)`
   background: ${props => props.theme[props.theme.mode].background.primary};
-  color: ${props => props.theme[props.theme.mode].textColor.primary}; 
-  border-bottom: 1px solid ${props => props.theme[props.theme.mode].border}; 
+  color: ${props => props.theme[props.theme.mode].textColor.primary};
+  padding: 0px ${props => props.theme[props.theme.mode].spacing.mainscreen}px; 
+  //border-bottom: 1px solid ${props => props.theme[props.theme.mode].border}; 
+
+  box-shadow: 0 -6px 22px 0px rgba(0,0,0,0.15);
+  /* position: relative; */
+  z-index: 100;
+
+  text-align: left;
 
   && .headerIcon {
     color: ${props => props.theme[props.theme.mode].textColor.primary}; 
@@ -20,7 +27,9 @@ const StyledHeader = styled(Header)`
 
 const HeaderWrapper = props => {
   return (
-    <StyledHeader style={{ padding: "0px" }}>
+    <StyledHeader 
+    //style={{ padding: "0px" }}
+    >
       <HeaderContent
         state={props.state}
         toggleCollapsed={props.toggleCollapsed}

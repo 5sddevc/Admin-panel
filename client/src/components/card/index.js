@@ -6,10 +6,16 @@ import styled from "styled-components";
 const StyledCard = styled(Card)`
   color: ${props => props.theme[props.theme.mode].textColor.primary};
   background-color: ${props => props.theme[props.theme.mode].background.primary};
+
+  .ant-card-body {
+    padding: ${props => props.theme[props.theme.mode].spacing.inner}px;
+  }
+
+  font-size: inherit;
   //border: 1px solid ${props => props.theme[props.theme.mode].border};
   border: none;
   border-radius: ${props => props.theme[props.theme.mode].card.borderRadius}px;
-  box-shadow: 6px 6px 10px -4px rgba(0,0,0,0.15);
+  box-shadow: 0px 6px 16px -6px rgba(0,0,0,0.15);
   transition: none;
   
   // * {
@@ -29,12 +35,16 @@ const StyledCard = styled(Card)`
   //   padding: ${props => props.theme[props.theme.mode].spacing.inner}px;
   // }
 
-  .mainContentDiv &:nth-of-type(1) {
+  .mainContentDiv &:nth-of-type(1), .mainContentDivSmall &:nth-of-type(1) {
     height: 100%;
   }
 
-  .mainContentDiv & .ant-card-body {
+  .mainContentDiv & .ant-card-body, .mainContentDivSmall & .ant-card-body {
     padding: ${props => props.theme[props.theme.mode].spacing.inner}px;
+  }
+  
+  &.extraPadding .ant-card-body {
+    padding: ${props => props.theme[props.theme.mode].spacing.inner + 4}px;
   }
 
   .innerContentSpacing {

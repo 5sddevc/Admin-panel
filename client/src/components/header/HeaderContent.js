@@ -7,7 +7,7 @@ import Switch from "../switch";
 import { toggleMode } from "../../actions/App";
 import { Row, Col } from "antd";
 import { HeaderLogo } from "../../configurations/Config";
-import { FiBell, FiMail } from "react-icons/fi";
+import { FiBell, FiMail, FiGrid, FiUsers, FiMessageSquare, FiFlag } from "react-icons/fi";
 import PopoverWrapper from "../popover/index";
 import MenuWrapper from "../menu";
 import Badge from "../badge/index";
@@ -71,7 +71,7 @@ class HeaderContent extends React.Component {
               <HeaderLogo />
             </div>
           </Col>
-          <Col span={2}>
+          {/* <Col span={2}>
             {menuShow.leftMenu === true ? (
               <Button
                 type="primary"
@@ -85,32 +85,46 @@ class HeaderContent extends React.Component {
                 />
               </Button>
             ) : null}
-          </Col>
-          <Col span={10}>
+          </Col> */}
+          <Col span={16}>
             <MenuWrapper
               mode="horizontal"
               defaultSelectedKeys={["1"]}
               style={{ lineHeight: "61px" }}
             >
               <Menu.Item key="1">
-                <Link to="/">Dashboard</Link>
+                <Link to="/">
+                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <FiGrid style={{ fontSize: "1.4rem" }} />&nbsp;&nbsp;Dashboard
+                  </span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Link to="/users">Users</Link>
+                <Link to="/users">
+                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <FiUsers style={{ fontSize: "1.4rem" }} />&nbsp;&nbsp;Users
+                  </span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="3">
-                <Link to="/reports">Reports</Link>
+                <Link to="/messages">
+                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <FiMessageSquare style={{ fontSize: "1.4rem" }} />&nbsp;&nbsp;Messages</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="4">
-                <Link to="/requests">Requests</Link>
+                <Link to="/flaggedprofiles"><span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <FiFlag style={{ fontSize: "1.4rem" }} />&nbsp;&nbsp;Flagged Profiles
+                  </span>
+                </Link>
               </Menu.Item>
-              <Menu.Item key="5">
-                <Link to="/settings">Settings</Link>
-              </Menu.Item>
+              {/* <Menu.Item key="5">
+                <Link to="/settings"><FiGrid />&nbsp;&nbsp;Settings</Link>
+              </Menu.Item> */}
             </MenuWrapper>
           </Col>
 
-          <Col span={4}>
+          {/* <Col span={4}>
             <span>
               Switch Theme
                   <Switch
@@ -121,11 +135,11 @@ class HeaderContent extends React.Component {
                 defaultChecked={true}
               ></Switch>
             </span>
-          </Col>
+          </Col> */}
 
-          <Col style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }} span={4}>
+          <Col style={{ display: "flex", alignItems: "center", justifyContent: "flex-end" }} span={4}>
               
-                <Badge count={10} style={{ color: "white" }}>
+                {/* <Badge count={10} style={{ color: "white" }}>
                   <PopoverWrapper
                     title={"Notifications"}
                     content={this.notifications()}
@@ -151,9 +165,19 @@ class HeaderContent extends React.Component {
                       }}
                     />
                   </PopoverWrapper>
-                </Badge>
+                </Badge> */}
               
-             
+                <span style={{ marginRight: 12 }}>
+                  Switch Theme
+                      <Switch
+                    onChange={() => {
+                      this.props.dispatch(toggleMode());
+                    }}
+                    style={{ marginLeft: 10 }}
+                    defaultChecked={true}
+                  ></Switch>
+                </span>
+
                 <Badge dot style={{ color: "white" }}>
                   <PopoverWrapper title={"Account"} content={this.account()}>
                     <Avatar

@@ -33,7 +33,7 @@ const renderLineChart = (props) => {
 renderLineChart.defaultProps = {
   width: '100%',
   height: 300,
-  margin: { top: 10, right: 50, left: 0, bottom: 0 },
+  margin: { top: 0, right: 0, left: 0, bottom: 0 },
   lineType: 'monotone',
   isCartReq: false,
   cartStroke: '#f0f0f0',

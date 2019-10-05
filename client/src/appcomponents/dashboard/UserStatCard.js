@@ -13,7 +13,7 @@ const UserStatCard = props =>
           {props.icon}
         </div>
         <p className="sub-heading headingColor" style={{ margin: "14px 0px 2px 0px", fontWeight: "bold" }}>{props.title}</p>
-        <p className="normal hintColor" style={{ margin: "2px 0px 14px 0px", fontWeight: "bold" }}>{props.amount}</p>
+        <p className="hintColor" style={{ margin: "2px 0px 14px 0px", fontWeight: "bold" }}>{props.amount}</p>
       </div>
     </Skeleton>
   </CardWrapper>)
