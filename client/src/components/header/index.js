@@ -16,6 +16,9 @@ const StyledHeader = styled(Header)`
   /* position: relative; */
   z-index: 100;
 
+  position: fixed;
+  width: 100%;
+
   text-align: left;
 
   && .headerIcon {

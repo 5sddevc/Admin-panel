@@ -8,7 +8,9 @@ const Blip = props => (
         height: props.small ? 4 : 6, 
         margin: props.small ? "0px 4px" : "0px 6px", 
         borderRadius: 20, 
-        backgroundColor: props.color ? props.color : props.theme[props.theme.mode].primary.main, }} />
+        backgroundColor: 
+        //props.color ? props.color :
+        props.theme[props.theme.mode].primary.main, }} />
 )
 
 export default withTheme(Blip);

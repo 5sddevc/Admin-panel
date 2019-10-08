@@ -65,8 +65,8 @@ class HeaderContent extends React.Component {
   render() {
     return (
       <div>
-        <Row type="flex">
-          <Col span={4}>
+        <Row type="flex" align="middle">
+          <Col span={2}>
             <div className="logo">
               <HeaderLogo />
             </div>
@@ -86,11 +86,11 @@ class HeaderContent extends React.Component {
               </Button>
             ) : null}
           </Col> */}
-          <Col span={16}>
+          <Col span={18}>
             <MenuWrapper
               mode="horizontal"
               defaultSelectedKeys={["1"]}
-              style={{ lineHeight: "61px" }}
+              //style={{ lineHeight: "64px" }}
             >
               <Menu.Item key="1">
                 <Link to="/">
@@ -167,7 +167,7 @@ class HeaderContent extends React.Component {
                   </PopoverWrapper>
                 </Badge> */}
               
-                <span style={{ marginRight: 12 }}>
+                {/* <span style={{ marginRight: 12 }}>
                   Switch Theme
                       <Switch
                     onChange={() => {
@@ -176,7 +176,7 @@ class HeaderContent extends React.Component {
                     style={{ marginLeft: 10 }}
                     defaultChecked={true}
                   ></Switch>
-                </span>
+                </span> */}
 
                 <Badge dot style={{ color: "white" }}>
                   <PopoverWrapper title={"Account"} content={this.account()}>

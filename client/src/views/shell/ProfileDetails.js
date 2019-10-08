@@ -37,8 +37,8 @@ const ProfileDetails = (props) => {
       overflow: "auto",
       zIndex: 100
     }} >
-      <div onClick={props.handleOpen} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
-        <div style={{ display: "flex", alignItems: "center", cursor: "pointer", fontWeight: "600" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
+        <div onClick={props.handleOpen} style={{ display: "flex", alignItems: "center", cursor: "pointer", fontWeight: "600" }}>
           {/* <ButtonWrapper> */}
             <FiArrowLeft style={{ marginRight: 6, fontSize: "1.4rem", color: props.theme[props.theme.mode].primary.main }}/>
           {/* </ButtonWrapper> */}

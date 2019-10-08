@@ -13,9 +13,10 @@ const StyledContent = styled(Content)`
 
   padding: ${props => props.theme[props.theme.mode].spacing.outer}px ${props => props.theme[props.theme.mode].spacing.mainscreen}px;
   padding-bottom: 0;
-  
-  // min-height: calc(100vh - 64px - 38px);
-  height: calc(100vh - 64px - 38px);
+
+  margin-top: 64px;
+  min-height: calc(100vh - 64px - 38px);
+  //height: calc(100vh - 64px - 38px);
   overflow: auto;
 
   h1, h2, h3, h4, h5 {

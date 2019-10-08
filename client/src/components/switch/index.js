@@ -3,9 +3,9 @@ import styled from "styled-components";
 import {Switch} from 'antd';
 
 const StyledSwitch = styled(Switch)`
-    // &.ant-switch-checked {
-    //     background-color: red !important;
-    // }
+    &.ant-switch-checked {
+        background-color: ${props => props.theme[props.theme.mode].primary.main} !important;
+    }
     // &.ant-switch {
     //     background-color: yellow;
     // }

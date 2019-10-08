@@ -12,8 +12,10 @@ export const theme = {
             "tertiary": "#f0f3f5"
         },
         "primary": {
-            "light": "#e6f7ff",
-            "main": "#1890ff",
+            // "light": "#e6f7ff",
+            // "main": "#1890ff",
+            "light": "#f9f4ff",
+            "main": "#8f21fd",
             "dark": "#303f9f",
             "contrastText": "rgba(255, 255, 255, 1)",
         },
