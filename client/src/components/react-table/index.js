@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ReactTable from "react-table";
-import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 import "react-table/react-table.css";
 import styled from "styled-components";
 import Style from "./Style"

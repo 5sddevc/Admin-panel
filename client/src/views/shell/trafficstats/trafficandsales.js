@@ -12,12 +12,9 @@ import {
 import CardWrapper from "../../../components/card/index";
 import ProgressWrapper from "../../../components/progress/index";
 import AvatarWrapper from "../../../components/avatar/index";
-import ButtonWrapper from "../../../components/button";
-import TagWrapper from "../../../components/tag";
-import SwitchWrapper from "../../../components/switch";
 //import TableWrapper from "../../../components/table/index";
 import TableWrapper from "../../../components/react-table";
-import { userDetails, usersData, tableData } from "../../../mocks/users";
+import { userDetails, usersData } from "../../../mocks/users";
 
 class TrafficAndSales extends React.Component {
   constructor(props) {
@@ -113,18 +110,6 @@ class TrafficAndSales extends React.Component {
       });
     });
   };
-
-  testfunc = () => console.log("HEEEEYYYY", this);
-  statusMapper = (status) => {
-    let map = {
-      Free: "primary",
-      Subscribed: "secondary",
-      Paused: "third",
-      Banned: "fourth"
-    }
-    return map[status];
-  }
-
   render() {
     console.log("Table State", this.state);
     const columns = this.columns.map(col => {

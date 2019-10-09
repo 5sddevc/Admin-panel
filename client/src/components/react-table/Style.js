@@ -18,7 +18,7 @@ const style = css`
 
 //min-width will depend on number of columns and their widths
 .rt-thead {
-    min-width: ${props => props.content.length * 100}px !important;
+    min-width: 500px !important;
     font-weight: bold;
     font-size: 1.05rem;
     position: relative;
@@ -30,9 +30,9 @@ const style = css`
     word-break: initial !important;
 }
 
-//Row height must be read from theme, font size in the whole table too
+//Row height must be read from theme
 .rt-tr {
-    background-color: ${props => props.theme[props.theme.mode].background.primary};
+    background-color: white;
     height: 65px;
 }
 
@@ -48,41 +48,12 @@ const style = css`
 
 
 
-//Sorting specific styling
-
-.rt-th .descending, .rt-th .ascending {
-    line-height: 0 !important;
-}
-
-.rt-th.-sort-desc, .rt-th.-sort-asc {
-    box-shadow: none !important;
-}
-
-.rt-th.-sort-desc .descending polyline, .rt-th.-sort-asc .ascending polyline {
-    color: ${props => props.theme[props.theme.mode].primary.main};
-}
-
-
-
-
 //The following should be app-specific as well
 
-// .rt-th:first-child, .rt-td:first-child {
-//     flex: 30 0 auto !important;
-//     justify-content: center;
-// }
-
-${props => props.content.map((val, ind) => val.centered ? css`
-.rt-th:nth-child(${ind + 1}), .rt-td:nth-child(${ind + 1}) {
+.rt-th:first-child, .rt-td:first-child {
+    flex: 30 0 auto !important;
     justify-content: center;
 }
-` : null)}
-
-${props => props.content.map((val, ind) => val.small ? css`
-.rt-th:nth-child(${ind + 1}), .rt-td:nth-child(${ind + 1}) {
-    flex: 30 0 auto !important;
-}
-` : null)}
 
 // .rt-th:last-child, .rt-td:last-child {
 //     min-width: 150px !important;
@@ -94,14 +65,13 @@ ${props => props.content.map((val, ind) => val.small ? css`
     background-color: rgb(249, 249, 249, 1);
 }
 
-.rt-tr-group {
-    border-bottom: 1px solid ${props => props.theme[props.theme.mode].border} !important;
-    //margin-bottom: 5px;
-}
+// .rt-tr-group {
+//     border: none !important;
+//     margin-bottom: 5px;
+// }
 
 .rt-tr-group:last-child {
-    border: none !important;
-    //margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 
